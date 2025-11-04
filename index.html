@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomedicina e Análises Clínicas - Prof. Rodrigo Niskier</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN (CORRIGIDO: Removido '-react' do link) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- ... existing code ... -->
+        .quiz-option input:checked + label {
+            border-color: #0d9488; /* teal-600 */
+            box-shadow: 0 0 0 2px #0d9488;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- ========== Header ========== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+<!-- ... existing code ... -->
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+<!-- ... existing code ... -->
+        </div>
+    </footer>
+
+    <script>
+        // CORREÇÃO: Envolve todo o script em um 'DOMContentLoaded' event listener
+        // Isso garante que o script só execute após o 'lucide.js' ter sido carregado.
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // ========== Inicialização de Ícones ==========
+            lucide.createIcons();
+
+            // ========== Menu Mobile ==========
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Troca o ícone do menu
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.setAttribute('data-lucide', 'menu');
+                } else {
+                    icon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons(); // Recria ícones após a troca
+            });
+
+            // ========== Accordion Logic ==========
+            document.querySelectorAll('.accordion-button').forEach(button => {
+<!-- ... existing code ... -->
+            });
+            
+            // ========== Tabs Logic (Interferentes) ==========
+            const tabButtons = document.querySelectorAll('.tab-button');
+<!-- ... existing code ... -->
+                    }
+                });
+            });
+
+            // ========== Atualização do Ano no Footer ==========
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // ========== Quiz Logic ==========
+            const quizData = [
+<!-- ... existing code ... -->
+                ],
+                answer: "Azul (Citrato de Sódio)"
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+<!-- ... existing code ... -->
+            submitButton.addEventListener('click', checkAnswers);
+
+            // Renderiza o quiz ao carregar a página
+            renderQuiz();
+        
+        }); // Fim do listener 'DOMContentLoaded'
+    </script>
