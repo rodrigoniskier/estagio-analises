@@ -8,12 +8,63 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons CDN (CORRIGIDO: Removido '-react' do link) -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Lucide Icons CDN (Corrigido de lucide-react para lucide) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- ... existing code ... -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilo customizado para a fonte Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d9488; /* teal-600 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #115e59; /* teal-800 */
+        }
+        
+        /* Estilos para o Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 2000px; /* Um valor alto para permitir expansão */
+        }
+        .accordion-button .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Estilos para o Quiz */
+        .quiz-option {
+            transition: all 0.2s ease;
+        }
+        .quiz-option.correct {
+            background-color: #dcfce7; /* green-100 */
+            border-color: #22c55e; /* green-500 */
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2; /* red-100 */
+            border-color: #ef4444; /* red-500 */
+        }
         .quiz-option input:checked + label {
             border-color: #0d9488; /* teal-600 */
             box-shadow: 0 0 0 2px #0d9488;
@@ -24,67 +75,741 @@
 
     <!-- ========== Header ========== -->
     <header class="bg-white shadow-md sticky top-0 z-50">
-<!-- ... existing code ... -->
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-teal-700 flex items-center">
+                <i data-lucide="microscope" class="mr-2"></i>
+                Análises Clínicas
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-gray-600 hover:text-teal-600 transition-colors">Início</a>
+                <a href="#fundamentos" class="text-gray-600 hover:text-teal-600 transition-colors">Fundamentos</a>
+                <a href="#pre-analitica" class="text-gray-600 hover:text-teal-600 transition-colors">Pré-Analítica</a>
+                <a href="#setores" class="text-gray-600 hover:text-teal-600 transition-colors">Setores</a>
+                <a href="#quiz" class="text-gray-600 hover:text-teal-600 transition-colors">Quiz</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-teal-600">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#inicio" class="block text-gray-600 hover:text-teal-600 transition-colors">Início</a>
+            <a href="#fundamentos" class="block text-gray-600 hover:text-teal-600 transition-colors">Fundamentos</a>
+            <a href="#pre-analitica" class="block text-gray-600 hover:text-teal-600 transition-colors">Pré-Analítica</a>
+            <a href="#setores" class="block text-gray-600 hover:text-teal-600 transition-colors">Setores</a>
+            <a href="#quiz" class="block text-gray-600 hover:text-teal-600 transition-colors">Quiz</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== Seção Início (Vídeo) ========== -->
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
+            <!-- Vídeo de Fundo -->
+            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <!-- Alterado o SRC para o link direto do Google Drive -->
+                <source src="https://drive.google.com/uc?export=view&id=11S61SiZ64XNrsPKOqhmL5YqH53tUdI-Y" type="video/mp4">
+                Seu navegador não suporta o vídeo de fundo.
+            </video>
+            
+            <!-- Overlay Escuro -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-10"></div>
+            
+            <!-- Conteúdo de Texto -->
+            <div class="relative z-20 p-6">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">Biomedicina e Análises Clínicas</h1>
+                <p class="text-lg md:text-2xl mb-8 animate-fade-in-up">Bem-vindo à linha de frente do diagnóstico.</p>
+                <a href="#fundamentos" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    Começar a Explorar
+                </a>
+            </div>
+        </section>
+
+        <!-- ========== Seção Fundamentos ========== -->
+        <section id="fundamentos" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
+                    <i data-lucide="library" class="mr-3"></i>
+                    Fundamentos Indispensáveis
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Biossegurança -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold text-teal-700 mb-4 flex items-center">
+                            <i data-lucide="shield-check" class="mr-2"></i>
+                            Biossegurança (BPL)
+                        </h3>
+                        <p class="mb-4">Proteção ao profissional, ao paciente e ao meio ambiente. O uso de EPIs é OBRIGATÓRIO.</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><span class="font-semibold">EPIs:</span> Jaleco (fechado), Luvas, Óculos, Máscaras.</li>
+                            <li><span class="font-semibold">EPCs:</span> Cabines de Segurança Biológica (CSB), Lava-olhos, Autoclaves.</li>
+                            <li><span class="font-semibold">Resíduos:</span> Segregação correta (Grupo A, B, E).</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 2: Fases Laboratoriais -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold text-teal-700 mb-4 flex items-center">
+                            <i data-lucide="workflow" class="mr-2"></i>
+                            As Três Fases Laboratoriais
+                        </h3>
+                        <p classs="mb-4">Gestão rigorosa dos processos é a chave da qualidade (RDC 786/2023).</p>
+                        <div class="flex flex-col md:flex-row justify-between items-center my-4 space-y-2 md:space-y-0 md:space-x-2">
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold">1. Pré-Analítica</span>
+                            <i data-lucide="arrow-right" class="hidden md:block text-gray-500"></i>
+                            <i data-lucide="arrow-down" class="block md:hidden text-gray-500"></i>
+                            <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-semibold">2. Analítica</span>
+                            <i data-lucide="arrow-right" class="hidden md:block text-gray-500"></i>
+                            <i data-lucide="arrow-down" class="block md:hidden text-gray-500"></i>
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold">3. Pós-Analítica</span>
+                        </div>
+                        <p class="mt-4 text-red-600 font-semibold text-center">🚨 Cerca de 70% dos erros laboratoriais ocorrem na Fase Pré-Analítica!</p>
+                    </div>
+                    
+                    <!-- Card 3: Controle de Qualidade -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold text-teal-700 mb-4 flex items-center">
+                            <i data-lucide="clipboard-check" class="mr-2"></i>
+                            Controle de Qualidade (CQ)
+                        </h3>
+                        <p class="mb-4">Assegurando a confiabilidade de CADA resultado liberado.</p>
+                        <ul class="space-y-3">
+                            <li class="border-l-4 border-teal-500 pl-3">
+                                <h4 class="font-semibold">Controle Interno (CCI)</h4>
+                                <p class="text-sm">Verificação diária com "amostras-controle" para monitorar a <span class="font-semibold">Precisão</span>.</p>
+                            </li>
+                            <li class="border-l-4 border-purple-500 pl-3">
+                                <h4 class="font-semibold">Controle Externo (CQE)</h4>
+                                <p class="text-sm">Avaliação externa mensal com "amostras-cegas" para monitorar a <span class="font-semibold">Exatidão</span>.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== Seção Pré-Analítica ========== -->
+        <section id="pre-analitica" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
+                    <i data-lucide="flask-conical" class="mr-3"></i>
+                    A Fase Pré-Analítica: O Ponto Crítico
+                </h2>
+                
+                <!-- Esquema: Tubos de Coleta -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Esquema: Tubos de Coleta 🧪</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                        <!-- Tubo Vermelho -->
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-red-500 transform transition-all hover:scale-105">
+                            <div class="w-12 h-12 bg-red-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">SOR</div>
+                            <h4 class="font-bold">Vermelha</h4>
+                            <p class="text-sm">Ativador de Coágulo</p>
+                            <p class="text-xs mt-2 font-semibold">Bioquímica, Sorologia</p>
+                        </div>
+                        <!-- Tubo Amarelo -->
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-yellow-400 transform transition-all hover:scale-105">
+                            <div class="w-12 h-12 bg-yellow-400 rounded-full mx-auto mb-3 flex items-center justify-center text-black font-bold">GEL</div>
+                            <h4 class="font-bold">Amarela</h4>
+                            <p class="text-sm">Gel Separador + Ativador</p>
+                            <p class="text-xs mt-2 font-semibold">Bioquímica, Sorologia</p>
+                        </div>
+                        <!-- Tubo Roxo -->
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-purple-500 transform transition-all hover:scale-105">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">EDTA</div>
+                            <h4 class="font-bold">Roxa (Lilás)</h4>
+                            <p class="text-sm">EDTA (Quelante de Ca²⁺)</p>
+                            <p class="text-xs mt-2 font-semibold">Hematologia (Hemograma)</p>
+                        </div>
+                        <!-- Tubo Azul -->
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-blue-500 transform transition-all hover:scale-105">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">CIT</div>
+                            <h4 class="font-bold">Azul</h4>
+                            <p class="text-sm">Citrato de Sódio</p>
+                            <p class="text-xs mt-2 font-semibold">Coagulação (TP, TTPA)</p>
+                        </div>
+                        <!-- Tubo Verde -->
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-green-500 transform transition-all hover:scale-105">
+                            <div class="w-12 h-12 bg-green-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">HEP</div>
+                            <h4 class="font-bold">Verde</h4>
+                            <p class="text-sm">Heparina (Inibe Trombina)</p>
+                            <p class="text-xs mt-2 font-semibold">Bioquímica de Urgência</p>
+                        </div>
+                        <!-- Tubo Cinza -->
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-gray-500 transform transition-all hover:scale-105">
+                            <div class="w-12 h-12 bg-gray-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">GLI</div>
+                            <h4 class="font-bold">Cinza</h4>
+                            <p class="text-sm">Fluoreto (Inibe Glicólise)</p>
+                            <p class="text-xs mt-2 font-semibold">Glicose, Lactato</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critérios de Rejeição (Interferentes) -->
+                <div>
+                    <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Interatividade: Critérios de Rejeição 🚫</h3>
+                    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                        <div class="flex border-b">
+                            <button class="tab-button flex-1 py-4 px-2 text-center font-semibold text-red-600 border-b-4 border-red-600 flex items-center justify-center" data-tab="hemolise">
+                                <i data-lucide="droplet" class="mr-2"></i> Hemólise
+                            </button>
+                            <button class="tab-button flex-1 py-4 px-2 text-center font-semibold text-gray-500 hover:text-yellow-600 flex items-center justify-center" data-tab="lipemia">
+                                <i data-lucide="cloudy" class="mr-2"></i> Lipemia
+                            </button>
+                            <button class="tab-button flex-1 py-4 px-2 text-center font-semibold text-gray-500 hover:text-amber-600 flex items-center justify-center" data-tab="ictericia">
+                                <i data-lucide="sun" class="mr-2"></i> Icterícia
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <!-- Conteúdo Hemólise -->
+                            <div class="tab-content" id="tab-hemolise">
+                                <h4 class="text-xl font-bold text-red-700 mb-3">Hemólise: Soro/Plasma Vermelho</h4>
+                                <div class="grid md:grid-cols-2 gap-6 items-center">
+                                    <div>
+                                        <p class="mb-3">Ocorre devido à ruptura das hemácias, liberando hemoglobina.</p>
+                                        <p class="font-semibold mb-2">Principais Causas:</p>
+                                        <ul class="list-disc list-inside text-sm mb-3">
+                                            <li>Coleta difícil ou traumática.</li>
+                                            <li>Agitação vigorosa do tubo.</li>
+                                            <li>Transporte inadequado (calor).</li>
+                                        </ul>
+                                        <p class="font-semibold text-red-600">Interferência Grave: Causa resultados FALSAMENTE ELEVADOS de Potássio (K+), TGO/AST e LDH.</p>
+                                    </div>
+                                    <div>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Hemolyzed_serum.jpg" 
+                                             alt="Amostras de soro hemolisado, normal e lipêmico" 
+                                             class="rounded-lg shadow-md w-full"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/ef4444/white?text=Soro+Hemolisado';">
+                                        <p class="text-xs text-center mt-1">Soro normal (centro), hemolisado (esquerda) e lipêmico (direita). <br> (Fonte: Wikimedia Commons)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Conteúdo Lipemia -->
+                            <div class="tab-content hidden" id="tab-lipemia">
+                                <h4 class="text-xl font-bold text-yellow-700 mb-3">Lipemia: Soro/Plasma Turvo/Leitoso</h4>
+                                <div class="grid md:grid-cols-2 gap-6 items-center">
+                                    <div>
+                                        <p class="mb-3">Ocorre devido ao excesso de gordura (Triglicerídeos) na amostra.</p>
+                                        <p class="font-semibold mb-2">Principal Causa:</p>
+                                        <ul class="list-disc list-inside text-sm mb-3">
+                                            <li>Falta de jejum adequado.</li>
+                                        </ul>
+                                        <p class="font-semibold text-yellow-600">Interferência: A turbidez interfere fisicamente na leitura espectrofotométrica da maioria dos exames bioquímicos.</p>
+                                    </div>
+                                    <div>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Lipemic_blood_sample.jpg" 
+                                             alt="Amostra de soro lipêmico" 
+                                             class="rounded-lg shadow-md w-full"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/f59e0b/white?text=Soro+Lipêmico';">
+                                        <p class="text-xs text-center mt-1">Amostra intensamente lipêmica. <br> (Fonte: Wikimedia Commons)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Conteúdo Icterícia -->
+                            <div class="tab-content hidden" id="tab-ictericia">
+                                <h4 class="text-xl font-bold text-amber-700 mb-3">Icterícia: Soro/Plasma Amarelo-Esverdeado</h4>
+                                <div class="grid md:grid-cols-2 gap-6 items-center">
+                                    <div>
+                                        <p class="mb-3">Ocorre devido ao excesso de Bilirrubina no sangue.</p>
+                                        <p class="font-semibold mb-2">Principal Causa:</p>
+                                        <ul class="list-disc list-inside text-sm mb-3">
+                                            <li>Problemas hepáticos (fígado) ou hemólise *in vivo* (destruição de hemácias dentro do corpo).</li>
+                                        </ul>
+                                        <p class="font-semibold text-amber-600">Interferência: A cor intensa interfere espectralmente em vários exames de bioquímica.</p>
+                                    </div>
+                                    <div>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Blood_plasma.jpg/640px-Blood_plasma.jpg" 
+                                             alt="Amostra de soro ictérico" 
+                                             class="rounded-lg shadow-md w-full"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/d97706/white?text=Soro+Ictérico';">
+                                        <p class="text-xs text-center mt-1">Plasma normal (esquerda) vs. Plasma ictérico (direita). <br> (Fonte: Wikimedia Commons)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== Seção Setores (Core) ========== -->
+        <section id="setores" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
+                    <i data-lucide="beaker" class="mr-3"></i>
+                    O "Core" Laboratorial: Setores da Rotina
+                </h2>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    
+                    <!-- Accordion 1: Bioquímica -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span class="text-xl font-semibold text-teal-700 flex items-center">
+                                <i data-lucide="activity" class="mr-3 text-blue-500"></i>
+                                Bioquímica
+                            </span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-teal-700"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t">
+                                <p class="mb-4">Quantifica substâncias químicas (metabólitos, enzimas, eletrólitos) no soro para avaliar a função de órgãos vitais.</p>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li><b>Função Renal:</b> Ureia, Creatinina.</li>
+                                    <li><b>Metabolismo Glicídico:</b> Glicose, Hemoglobina Glicada (HbA1c).</li>
+                                    <li><b>Perfil Lipídico:</b> Colesterol Total, HDL, LDL, Triglicerídeos.</li>
+                                    <li><b>Hepatograma (Fígado):</b> TGO/AST, TGP/ALT, Bilirrubinas, GGT.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion 2: Hematologia -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span class="text-xl font-semibold text-teal-700 flex items-center">
+                                <i data-lucide="droplets" class="mr-3 text-red-500"></i>
+                                Hematologia
+                            </span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-teal-700"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t">
+                                <p class="mb-4">Estudo dos elementos do sangue (hemácias, leucócitos, plaquetas) e da coagulação. A automação (contador) e a microscopia (lâmina) são complementares.</p>
+                                <p class="font-semibold mb-3">Achados Críticos na Lâmina:</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <figure>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Sickle_cell_anemia_blood_smear_2015_01_20.jpg" 
+                                             alt="Lâmina de Anemia Falciforme" 
+                                             class="rounded-lg shadow-md w-full h-48 object-cover"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/ef4444/white?text=Drepanócitos';">
+                                        <figcaption class="text-sm text-center mt-1"><b>Anemia Falciforme:</b> Presença de <b>Drepanócitos</b> (hemácias em foice).<br>(Fonte: Wikimedia Commons)</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Atypical_lymphocyte_%285098236173%29.jpg" 
+                                             alt="Lâmina com Linfócito Atípico" 
+                                             class="rounded-lg shadow-md w-full h-48 object-cover"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/8b5cf6/white?text=Linfócito+Atípico';">
+                                        <figcaption class="text-sm text-center mt-1"><b>Viroses (ex: Dengue):</b> Presença de <b>Linfócitos Atípicos</b> (Reativos).<br>(Fonte: Wikimedia Commons)</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion 3: Urinálise (EAS) -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span class="text-xl font-semibold text-teal-700 flex items-center">
+                                <i data-lucide="test-tube" class="mr-3 text-yellow-500"></i>
+                                Urinálise (EAS)
+                            </span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-teal-700"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t">
+                                <p class="mb-4">Uma "biópsia líquida" dos rins e trato urinário. Divide-se em análise Física (cor, aspecto), Química (fita reagente) e Microscópica (sedimento).</p>
+                                <p class="font-semibold mb-3">Achados na Sedimentoscopia:</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <figure>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Oxaluria.jpg/640px-Oxaluria.jpg" 
+                                             alt="Cristais de Oxalato de Cálcio" 
+                                             class="rounded-lg shadow-md w-full h-48 object-cover"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/6b7280/white?text=Cristais+de+Oxalato';">
+                                        <figcaption class="text-sm text-center mt-1"><b>Litíase (Cálculo Renal):</b> Frequente presença de <b>Cristais</b> (ex: Oxalato de Cálcio).<br>(Fonte: Wikimedia Commons)</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pyuria.jpg/640px-Pyuria.jpg" 
+                                             alt="Piócitos na urina" 
+                                             class="rounded-lg shadow-md w-full h-48 object-cover"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/f59e0b/white?text=Piócitos+(Leucócitos)';">
+                                        <figcaption class="text-sm text-center mt-1"><b>Infecção Urinária (ITU):</b> Aumento de <b>Leucócitos (Piócitos)</b> e presença de bactérias.<br>(Fonte: Wikimedia Commons)</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion 4: Parasitologia (EPF) -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span class="text-xl font-semibold text-teal-700 flex items-center">
+                                <i data-lucide="bug" class="mr-3 text-lime-600"></i>
+                                Parasitologia (EPF)
+                            </span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-teal-700"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t">
+                                <p class="mb-4">Identificação de parasitas intestinais (ovos, larvas, cistos) por microscopia. O "olho treinado" é essencial.</p>
+                                <p class="font-semibold mb-3">Morfologias Essenciais:</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <figure>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ascaris_lumbricoides_fertilized_egg_2.jpg/640px-Ascaris_lumbricoides_fertilized_egg_2.jpg" 
+                                             alt="Ovo de Ascaris lumbricoides" 
+                                             class="rounded-lg shadow-md w-full h-48 object-cover"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/84cc16/white?text=Ovo+Ascaris';">
+                                        <figcaption class="text-sm text-center mt-1"><b>Ascaris lumbricoides:</b> Ovo com casca cortical mamelonada característica.<br>(Fonte: Wikimedia Commons)</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Schistosoma_mansoni_egg_800x.jpg/640px-Schistosoma_mansoni_egg_800x.jpg" 
+                                             alt="Ovo de Schistosoma mansoni" 
+                                             class="rounded-lg shadow-md w-full h-48 object-cover"
+                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/a16207/white?text=Ovo+S.+mansoni';">
+                                        <figcaption class="text-sm text-center mt-1"><b>Schistosoma mansoni:</b> Ovo com <b>espinho lateral</b> nítido (achado pelo método de Lutz/HPJ).<br>(Fonte: Wikimedia Commons)</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion 5: Sorologia / Imunologia -->
+                    <div class="border rounded-lg overflow-hidden shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span class="text-xl font-semibold text-teal-700 flex items-center">
+                                <i data-lucide="virus" class="mr-3 text-purple-600"></i>
+                                Sorologia / Imunologia
+                            </span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-teal-700"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t">
+                                <p class="mb-4">Investiga a resposta imune: procura por <b>Anticorpos (IgM, IgG)</b> ou <b>Antígenos (NS1, HBsAg)</b>. A metodologia vai de Testes Rápidos a Quimioluminescência.</p>
+                                <h4 class="font-semibold mb-3">Esquema: Janela de Diagnóstico da Dengue</h4>
+                                <div class="bg-gray-100 p-4 rounded-lg">
+                                    <p class="font-bold text-center mb-2">Início dos Sintomas (Febre)</p>
+                                    <!-- Linha do Tempo -->
+                                    <div class="relative w-full h-2 bg-gray-300 rounded-full">
+                                        <!-- Marcador NS1 -->
+                                        <div class="absolute top-[-28px] left-0 w-2/5">
+                                            <p class="text-xs text-center font-bold text-red-600">NS1 (Antígeno)</p>
+                                            <div class="h-2 bg-red-500 rounded-full"></div>
+                                            <p class="text-xs text-center">Dia 1 ao Dia 5</p>
+                                        </div>
+                                        <!-- Marcador IgM -->
+                                        <div class="absolute top-[32px] left-[15%] w-3/4">
+                                            <p class="text-xs text-center font-bold text-blue-600">IgM (Infecção Recente)</p>
+                                            <div class="h-2 bg-blue-500 rounded-full"></div>
+                                            <p class="text-xs text-center">A partir do Dia 6</p>
+                                        </div>
+                                        <!-- Marcador IgG -->
+                                        <div class="absolute top-[92px] left-[25%] w-3/4">
+                                            <p class="text-xs text-center font-bold text-green-600">IgG (Memória)</p>
+                                            <div class="h-2 bg-green-500 rounded-full"></div>
+                                            <p class="text-xs text-center">A partir do Dia 10-14</p>
+                                        </div>
+                                    </div>
+                                    <!-- Legenda -->
+                                    <div class="mt-32 text-center text-sm">
+                                        <p class="text-red-600">❌ Erro Comum: Pedir IgM na fase febril inicial (resulta em falso-negativo).</p>
+                                        <p class="text-green-600">✅ Correto (Fase Febril): Solicitar <b>NS1</b>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== Seção Quiz ========== -->
+        <section id="quiz" class="py-20 bg-teal-800 text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+                    <i data-lucide="brain" class="mr-3"></i>
+                    Teste seu Conhecimento!
+                </h2>
+                <div class="max-w-3xl mx-auto bg-white text-gray-800 p-6 md:p-10 rounded-lg shadow-2xl">
+                    <div id="quiz-container" class="space-y-8">
+                        <!-- As perguntas serão injetadas aqui pelo JavaScript -->
+                    </div>
+                    
+                    <button id="submit-quiz" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 mt-10 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        Verificar Respostas
+                    </button>
+                    
+                    <div id="quiz-results" class="mt-8 text-center text-2xl font-bold">
+                        <!-- O resultado aparecerá aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- ========== Footer ========== -->
     <footer class="bg-gray-900 text-gray-400 py-10">
-<!-- ... existing code ... -->
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg font-semibold text-white">Prof. Rodrigo Niskier</p>
+            <p class="mt-2 text-sm">
+                © <span id="current-year"></span> Todos os direitos reservados.
+            </p>
+            <p class="mt-1 text-xs">Página web educacional criada com base no material fornecido.</p>
         </div>
     </footer>
 
     <script>
-        // CORREÇÃO: Envolve todo o script em um 'DOMContentLoaded' event listener
-        // Isso garante que o script só execute após o 'lucide.js' ter sido carregado.
-        document.addEventListener("DOMContentLoaded", () => {
-            
-            // ========== Inicialização de Ícones ==========
+        // ========== Inicialização de Ícones ==========
+        lucide.createIcons();
+
+        // ========== Menu Mobile ==========
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Troca o ícone do menu
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
             lucide.createIcons();
+        });
 
-            // ========== Menu Mobile ==========
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                // Troca o ícone do menu
-                const icon = mobileMenuButton.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.setAttribute('data-lucide', 'menu');
+        // ========== Accordion Logic ==========
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                // Fecha todos os outros accordions
+                document.querySelectorAll('.accordion-button').forEach(otherButton => {
+                    if (otherButton !== button && otherButton.classList.contains('active')) {
+                        otherButton.classList.remove('active');
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                
+                // Abre ou fecha o accordion clicado
+                button.classList.toggle('active');
+                if (button.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
                 } else {
-                    icon.setAttribute('data-lucide', 'x');
+                    content.style.maxHeight = null;
                 }
-                lucide.createIcons(); // Recria ícones após a troca
             });
-
-            // ========== Accordion Logic ==========
-            document.querySelectorAll('.accordion-button').forEach(button => {
-<!-- ... existing code ... -->
-            });
-            
-            // ========== Tabs Logic (Interferentes) ==========
-            const tabButtons = document.querySelectorAll('.tab-button');
-<!-- ... existing code ... -->
+        });
+        
+        // ========== Tabs Logic (Interferentes) ==========
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.dataset.tab;
+                
+                // Atualiza botões
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('text-red-600', 'border-red-600', 'text-yellow-600', 'border-yellow-600', 'text-amber-600', 'border-amber-600');
+                    btn.classList.add('text-gray-500');
+                    if (btn.dataset.tab === 'hemolise') btn.classList.add('hover:text-red-600');
+                    if (btn.dataset.tab === 'lipemia') btn.classList.add('hover:text-yellow-600');
+                    if (btn.dataset.tab === 'ictericia') btn.classList.add('hover:text-amber-600');
+                });
+                
+                if (tabId === 'hemolise') button.classList.add('text-red-600', 'border-red-600');
+                if (tabId === 'lipemia') button.classList.add('text-yellow-600', 'border-yellow-600');
+                if (tabId === 'ictericia') button.classList.add('text-amber-600', 'border-amber-600');
+                
+                // Atualiza conteúdos
+                tabContents.forEach(content => {
+                    if (content.id === 'tab-' + tabId) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
                     }
                 });
             });
+        });
 
-            // ========== Atualização do Ano no Footer ==========
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+        // ========== Atualização do Ano no Footer ==========
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // ========== Quiz Logic ==========
-            const quizData = [
-<!-- ... existing code ... -->
+        // ========== Quiz Logic ==========
+        const quizData = [
+            {
+                question: "1. De acordo com a RDC 786/2023, em qual das três fases laboratoriais ocorre a grande maioria (cerca de 70%) dos erros?",
+                options: [
+                    "Fase Analítica (execução do exame)",
+                    "Fase Pós-Analítica (liberação do laudo)",
+                    "Fase Pré-Analítica (coleta, transporte, triagem)",
+                    "Fase de Faturamento (cobrança)"
+                ],
+                answer: "Fase Pré-Analítica (coleta, transporte, triagem)"
+            },
+            {
+                question: "2. Qual a cor da tampa do tubo de coleta que contém EDTA e é usado primariamente para o Hemograma?",
+                options: [
+                    "Azul (Citrato)",
+                    "Roxa/Lilás (EDTA)",
+                    "Vermelha (Ativador de Coágulo)",
+                    "Cinza (Fluoreto)"
+                ],
+                answer: "Roxa/Lilás (EDTA)"
+            },
+            {
+                question: "3. Um soro com aspecto visual turvo e leitoso é classificado como...",
+                options: [
+                    "Hemolisado",
+                    "Ictérico",
+                    "Coagulado",
+                    "Lipêmico"
+                ],
+                answer: "Lipêmico"
+            },
+            {
+                question: "4. A presença de um soro vermelho (devido à ruptura de hemácias) pode causar uma interferência grave, resultando em um valor FALSAMENTE ELEVADO de qual eletrólito?",
+                options: [
+                    "Sódio (Na+)",
+                    "Cloro (Cl-)",
+                    "Potássio (K+)",
+                    "Cálcio (Ca²⁺)"
+                ],
+                answer: "Potássio (K+)"
+            },
+            {
+                question: "5. Quais são os principais exames bioquímicos utilizados para monitorar a Função Renal?",
+                options: [
+                    "TGO/AST e TGP/ALT",
+                    "Ureia e Creatinina",
+                    "Colesterol Total e Triglicerídeos",
+                    "Hemoglobina Glicada (HbA1c)"
+                ],
+                answer: "Ureia e Creatinina"
+            },
+            {
+                question: "6. Na análise microscópica da lâmina (esfregaço sanguíneo), a presença de Drepanócitos (hemácias em foice) é um achado patognomônico de qual doença?",
+                options: [
+                    "Dengue",
+                    "Infecção Bacteriana",
+                    "Anemia Falciforme",
+                    "Leucemia"
+                ],
+                answer: "Anemia Falciforme"
+            },
+            {
+                question: "7. Na análise de Urinálise (EAS), o que a presença de 'Nitrito Positivo' na fita reagente sugere fortemente?",
+                options: [
+                    "Presença de cálculo renal (litíase)",
+                    "Infecção por bactérias Gram-negativas",
+                    "Lesão no fígado",
+                    "Diabetes mal controlada"
+                ],
+                answer: "Infecção por bactérias Gram-negativas"
+            },
+            {
+                question: "8. No Exame Parasitológico de Fezes (EPF), qual o método de escolha (baseado em termo/hidrotropismo) para a pesquisa de larvas de *Strongyloides stercoralis*?",
+                options: [
+                    "Faust (Flutuação)",
+                    "Lutz/HPJ (Sedimentação)",
+                    "Baermann-Moraes (Migração de Larvas)",
+                    "Método Direto (a fresco)"
+                ],
+                answer: "Baermann-Moraes (Migração de Larvas)"
+            },
+            {
+                question: "9. No diagnóstico sorológico da Dengue, qual marcador é o mais indicado para detectar a infecção na fase febril inicial (primeiros 5 dias)?",
+                options: [
+                    "Antígeno NS1",
+                    "Anticorpo IgM",
+                    "Anticorpo IgG",
+                    "PCR"
+                ],
+                answer: "Antígeno NS1"
+            },
+            {
+                question: "10. Qual a cor da tampa do tubo de coleta que contém Citrato de Sódio e é usado especificamente para exames de Coagulação (ex: TP, TTPA)?",
+                options: [
+                    "Verde (Heparina)",
+                    "Roxa (EDTA)",
+                    "Amarela (Gel)",
+                    "Azul (Citrato de Sódio)"
                 ],
                 answer: "Azul (Citrato de Sódio)"
             }
         ];
 
         const quizContainer = document.getElementById('quiz-container');
-<!-- ... existing code ... -->
-            submitButton.addEventListener('click', checkAnswers);
+        const submitButton = document.getElementById('submit-quiz');
+        const quizResults = document.getElementById('quiz-results');
 
-            // Renderiza o quiz ao carregar a página
-            renderQuiz();
+        function renderQuiz() {
+            quizContainer.innerHTML = '';
+            quizData.forEach((item, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'quiz-question';
+                
+                let optionsHTML = '';
+                item.options.forEach((option, optionIndex) => {
+                    optionsHTML += `
+                        <div class="quiz-option border border-gray-300 rounded-lg">
+                            <input type="radio" name="question${index}" id="q${index}o${optionIndex}" value="${option}" class="hidden">
+                            <label for="q${index}o${optionIndex}" class="block w-full p-4 rounded-lg cursor-pointer hover:bg-gray-50">
+                                ${option}
+                            </label>
+                        </div>
+                    `;
+                });
+
+                questionElement.innerHTML = `
+                    <p class="text-lg font-semibold mb-4">${item.question}</p>
+                    <div class="space-y-3">
+                        ${optionsHTML}
+                    </div>
+                `;
+                quizContainer.appendChild(questionElement);
+            });
+        }
+
+        function checkAnswers() {
+            let correctCount = 0;
+            const questions = quizContainer.querySelectorAll('.quiz-question');
+            
+            questions.forEach((question, index) => {
+                const selected = question.querySelector(`input[name="question${index}"]:checked`);
+                const options = question.querySelectorAll('.quiz-option');
+                const correctAnswer = quizData[index].answer;
+                
+                options.forEach(option => {
+                    const input = option.querySelector('input');
+                    option.classList.remove('correct', 'incorrect');
+                    
+                    if (input.value === correctAnswer) {
+                        option.classList.add('correct');
+                    }
+                });
+                
+                if (selected) {
+                    if (selected.value === correctAnswer) {
+                        correctCount++;
+                    } else {
+                        selected.parentElement.classList.add('incorrect');
+                    }
+                }
+            });
+            
+            quizResults.innerHTML = `Você acertou ${correctCount} de ${quizData.length} perguntas!`;
+            if (correctCount === quizData.length) {
+                quizResults.innerHTML += " 🥳 Parabéns, excelente!";
+                quizResults.style.color = '#0d9488'; // teal-600
+            } else if (correctCount >= quizData.length / 2) {
+                quizResults.innerHTML += " 😄 Muito bem!";
+                quizResults.style.color = '#059669'; // green-600
+            } else {
+                quizResults.innerHTML += " 🧐 Continue estudando!";
+                quizResults.style.color = '#ef4444'; // red-500
+            }
+
+            // Desativa o botão após verificar
+            submitButton.disabled = true;
+            submitButton.textContent = 'Resultados Verificados';
+            submitButton.classList.add('bg-gray-500', 'cursor-not-allowed');
+            submitButton.classList.remove('bg-teal-600', 'hover:bg-teal-700');
+        }
+
+        submitButton.addEventListener('click', checkAnswers);
+
+        // Renderiza o quiz ao carregar a página
+        renderQuiz();
         
-        }); // Fim do listener 'DOMContentLoaded'
     </script>
+
+</body>
+</html>
+
