@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biomedicina e Análises Clínicas - Prof. Rodrigo Niskier</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons CDN (Corrigido de lucide-react para lucide) -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     
-    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -63,21 +60,44 @@
 
         /* Estilos para o Quiz */
         .quiz-option {
-/* ... existing code ... -->
-    <main>
-        <!-- ========== Seção Início (Fundo Imagem + Link Download) ========== -->
+            /* O SEU CÓDIGO FOI CORTADO AQUI. 
+            Eu fechei o bloco, mas você pode adicionar os estilos que faltavam.
+            Exemplo de estilos que estavam no seu JavaScript: 
+            */
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .quiz-option input[type="radio"]:checked + label {
+            background-color: #f0fdfa; /* teal-50 */
+            border-color: #0d9488; /* teal-600 */
+            font-weight: 600;
+        }
+        .quiz-option.correct {
+            border-color: #10b981; /* green-500 */
+            background-color: #ecfdf5; /* green-50 */
+        }
+        .quiz-option.correct label {
+            color: #059669; /* green-700 */
+            font-weight: 600;
+        }
+        .quiz-option.incorrect {
+            border-color: #ef4444; /* red-500 */
+            background-color: #fef2f2; /* red-50 */
+        }
+        .quiz-option.incorrect label {
+            color: #b91c1c; /* red-700 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<main>
         <section id="inicio" class="relative h-screen overflow-hidden">
-            <!-- Iframe Removido -->
-            
-            <!-- Overlay Escuro (Mantido para legibilidade do texto sobre a imagem) -->
             <div class="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-10"></div>
             
-            <!-- Conteúdo de Texto -->
             <div class="relative z-20 h-full flex flex-col items-center justify-center text-white text-center p-6">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">Biomedicina e Análises Clínicas</h1>
                 <p class="text-lg md:text-2xl mb-8 animate-fade-in-up">Bem-vindo à linha de frente do diagnóstico.</p>
                 
-                <!-- Container dos Botões -->
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#fundamentos" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                         Começar a Explorar
@@ -93,7 +113,6 @@
             </div>
         </section>
 
-        <!-- ========== Seção Fundamentos ========== -->
         <section id="fundamentos" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
@@ -101,7 +120,6 @@
                     Fundamentos Indispensáveis
                 </h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card 1: Biossegurança -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                         <h3 class="text-xl font-bold text-teal-700 mb-4 flex items-center">
                             <i data-lucide="shield-check" class="mr-2"></i>
@@ -115,7 +133,6 @@
                         </ul>
                     </div>
                     
-                    <!-- Card 2: Fases Laboratoriais -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                         <h3 class="text-xl font-bold text-teal-700 mb-4 flex items-center">
                             <i data-lucide="workflow" class="mr-2"></i>
@@ -134,7 +151,6 @@
                         <p class="mt-4 text-red-600 font-semibold text-center">🚨 Cerca de 70% dos erros laboratoriais ocorrem na Fase Pré-Analítica!</p>
                     </div>
                     
-                    <!-- Card 3: Controle de Qualidade -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                         <h3 class="text-xl font-bold text-teal-700 mb-4 flex items-center">
                             <i data-lucide="clipboard-check" class="mr-2"></i>
@@ -156,7 +172,6 @@
             </div>
         </section>
         
-        <!-- ========== Seção Pré-Analítica ========== -->
         <section id="pre-analitica" class="py-20 bg-gray-100">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
@@ -164,46 +179,39 @@
                     A Fase Pré-Analítica: O Ponto Crítico
                 </h2>
                 
-                <!-- Esquema: Tubos de Coleta -->
                 <div class="mb-16">
                     <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Esquema: Tubos de Coleta 🧪</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                        <!-- Tubo Vermelho -->
                         <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-red-500 transform transition-all hover:scale-105">
                             <div class="w-12 h-12 bg-red-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">SOR</div>
                             <h4 class="font-bold">Vermelha</h4>
                             <p class="text-sm">Ativador de Coágulo</p>
                             <p class="text-xs mt-2 font-semibold">Bioquímica, Sorologia</p>
                         </div>
-                        <!-- Tubo Amarelo -->
                         <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-yellow-400 transform transition-all hover:scale-105">
                             <div class="w-12 h-12 bg-yellow-400 rounded-full mx-auto mb-3 flex items-center justify-center text-black font-bold">GEL</div>
                             <h4 class="font-bold">Amarela</h4>
                             <p class="text-sm">Gel Separador + Ativador</p>
                             <p class="text-xs mt-2 font-semibold">Bioquímica, Sorologia</p>
                         </div>
-                        <!-- Tubo Roxo -->
                         <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-purple-500 transform transition-all hover:scale-105">
                             <div class="w-12 h-12 bg-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">EDTA</div>
                             <h4 class="font-bold">Roxa (Lilás)</h4>
                             <p class="text-sm">EDTA (Quelante de Ca²⁺)</p>
                             <p class="text-xs mt-2 font-semibold">Hematologia (Hemograma)</p>
                         </div>
-                        <!-- Tubo Azul -->
                         <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-blue-500 transform transition-all hover:scale-105">
                             <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">CIT</div>
                             <h4 class="font-bold">Azul</h4>
                             <p class="text-sm">Citrato de Sódio</p>
                             <p class="text-xs mt-2 font-semibold">Coagulação (TP, TTPA)</p>
                         </div>
-                        <!-- Tubo Verde -->
                         <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-green-500 transform transition-all hover:scale-105">
                             <div class="w-12 h-12 bg-green-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">HEP</div>
                             <h4 class="font-bold">Verde</h4>
                             <p class="text-sm">Heparina (Inibe Trombina)</p>
                             <p class="text-xs mt-2 font-semibold">Bioquímica de Urgência</p>
                         </div>
-                        <!-- Tubo Cinza -->
                         <div class="text-center p-4 bg-white rounded-lg shadow-md border-b-8 border-gray-500 transform transition-all hover:scale-105">
                             <div class="w-12 h-12 bg-gray-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold">GLI</div>
                             <h4 class="font-bold">Cinza</h4>
@@ -213,7 +221,6 @@
                     </div>
                 </div>
 
-                <!-- Critérios de Rejeição (Interferentes) -->
                 <div>
                     <h3 class="text-2xl font-bold text-center text-gray-700 mb-8">Interatividade: Critérios de Rejeição 🚫</h3>
                     <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
@@ -229,7 +236,6 @@
                             </button>
                         </div>
                         <div class="p-6">
-                            <!-- Conteúdo Hemólise -->
                             <div class="tab-content" id="tab-hemolise">
                                 <h4 class="text-xl font-bold text-red-700 mb-3">Hemólise: Soro/Plasma Vermelho</h4>
                                 <div class="grid md:grid-cols-2 gap-6 items-center">
@@ -252,7 +258,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Conteúdo Lipemia -->
                             <div class="tab-content hidden" id="tab-lipemia">
                                 <h4 class="text-xl font-bold text-yellow-700 mb-3">Lipemia: Soro/Plasma Turvo/Leitoso</h4>
                                 <div class="grid md:grid-cols-2 gap-6 items-center">
@@ -273,7 +278,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Conteúdo Icterícia -->
                             <div class="tab-content hidden" id="tab-ictericia">
                                 <h4 class="text-xl font-bold text-amber-700 mb-3">Icterícia: Soro/Plasma Amarelo-Esverdeado</h4>
                                 <div class="grid md:grid-cols-2 gap-6 items-center">
@@ -300,7 +304,6 @@
             </div>
         </section>
 
-        <!-- ========== Seção Setores (Core) - CONTEÚDO APROFUNDADO ========== -->
         <section id="setores" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
@@ -309,7 +312,6 @@
                 </h2>
                 <div class="max-w-4xl mx-auto space-y-4">
                     
-                    <!-- Accordion 1: Bioquímica -->
                     <div class="border rounded-lg overflow-hidden shadow-sm">
                         <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
                             <span class="text-xl font-semibold text-teal-700 flex items-center">
@@ -352,7 +354,6 @@
                         </div>
                     </div>
                     
-                    <!-- Accordion 2: Hematologia -->
                     <div class="border rounded-lg overflow-hidden shadow-sm">
                         <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
                             <span class="text-xl font-semibold text-teal-700 flex items-center">
@@ -389,12 +390,10 @@
                                     </li>
                                 </ul>
                                 <p class="mt-4"><b>Coagulação (Tubo Azul):</b> Avalia o tempo de coagulação através do <b>TP (INR)</b> (via extrínseca, monitora varfarina) e <b>TTPA</b> (via intrínseca, monitora heparina).</p>
-                                <!-- Figuras removidas conforme solicitado -->
-                            </div>
+                                </div>
                         </div>
                     </div>
                     
-                    <!-- Accordion 3: Urinálise (EAS) -->
                     <div class="border rounded-lg overflow-hidden shadow-sm">
                         <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
                             <span class="text-xl font-semibold text-teal-700 flex items-center">
@@ -431,12 +430,10 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                <!-- Figuras removidas conforme solicitado -->
-                            </div>
+                                </div>
                         </div>
                     </div>
                     
-                    <!-- Accordion 4: Parasitologia (EPF) -->
                     <div class="border rounded-lg overflow-hidden shadow-sm">
                         <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
                             <span class="text-xl font-semibold text-teal-700 flex items-center">
@@ -470,12 +467,10 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                <!-- Figuras removidas conforme solicitado -->
-                            </div>
+                                </div>
                         </div>
                     </div>
                     
-                    <!-- Accordion 5: Sorologia / Imunologia -->
                     <div class="border rounded-lg overflow-hidden shadow-sm">
                         <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors">
                             <span class="text-xl font-semibold text-teal-700 flex items-center">
@@ -496,28 +491,23 @@
                                 <h4 class="font-semibold mb-3">Exemplos Críticos (Dengue):</h4>
                                 <div class="bg-gray-100 p-4 rounded-lg">
                                     <p class="font-bold text-center mb-2">Início dos Sintomas (Febre)</p>
-                                    <!-- Linha do Tempo -->
                                     <div class="relative w-full h-2 bg-gray-300 rounded-full">
-                                        <!-- Marcador NS1 -->
                                         <div class="absolute top-[-28px] left-0 w-2/5">
                                             <p class="text-xs text-center font-bold text-red-600">NS1 (Antígeno)</p>
                                             <div class="h-2 bg-red-500 rounded-full"></div>
                                             <p class="text-xs text-center">Dia 1 ao Dia 5</p>
                                         </div>
-                                        <!-- Marcador IgM -->
                                         <div class="absolute top-[32px] left-[15%] w-3/4">
                                             <p class="text-xs text-center font-bold text-blue-600">IgM (Infecção Recente)</p>
                                             <div class="h-2 bg-blue-500 rounded-full"></div>
                                             <p class="text-xs text-center">A partir do Dia 6</p>
                                         </div>
-                                        <!-- Marcador IgG -->
                                         <div class="absolute top-[92px] left-[25%] w-3/4">
                                             <p class="text-xs text-center font-bold text-green-600">IgG (Memória)</p>
                                             <div class="h-2 bg-green-500 rounded-full"></div>
                                             <p class="text-xs text-center">A partir do Dia 10-14</p>
                                         </div>
                                     </div>
-                                    <!-- Legenda -->
                                     <div class="mt-32 text-center text-sm">
                                         <p class="text-red-600">❌ Erro Comum: Pedir IgM na fase febril inicial (resulta em falso-negativo).</p>
                                         <p class="text-green-600">✅ Correto (Fase Febril): Solicitar <b>NS1</b>.</p>
@@ -530,7 +520,6 @@
             </div>
         </section>
         
-        <!-- ========== Seção Quiz ========== -->
         <section id="quiz" class="py-20 bg-teal-800 text-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12 flex items-center justify-center">
@@ -539,22 +528,19 @@
                 </h2>
                 <div class="max-w-3xl mx-auto bg-white text-gray-800 p-6 md:p-10 rounded-lg shadow-2xl">
                     <div id="quiz-container" class="space-y-8">
-                        <!-- As perguntas serão injetadas aqui pelo JavaScript -->
-                    </div>
+                        </div>
                     
                     <button id="submit-quiz" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 mt-10 shadow-lg hover:shadow-xl transform hover:scale-105">
                         Verificar Respostas
                     </button>
                     
                     <div id="quiz-results" class="mt-8 text-center text-2xl font-bold">
-                        <!-- O resultado aparecerá aqui -->
-                    </div>
+                        </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ========== Footer ========== -->
     <footer class="bg-gray-900 text-gray-400 py-10">
         <div class="container mx-auto px-6 text-center">
             <p class="text-lg font-semibold text-white">Prof. Rodrigo Niskier</p>
@@ -569,20 +555,23 @@
         // ========== Inicialização de Ícones ==========
         lucide.createIcons();
 
-        // ========== Menu Mobile ==========
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        // ========== Menu Mobile (Não implementado no HTML fornecido, mas código JS estava presente) ==========
+        /* const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            // Troca o ícone do menu
-            const icon = mobileMenuButton.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.setAttribute('data-lucide', 'menu');
-            } else {
-                icon.setAttribute('data-lucide', 'x');
-            }
-            lucide.createIcons();
-        });
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Troca o ícone do menu
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.setAttribute('data-lucide', 'menu');
+                } else {
+                    icon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons();
+            });
+        }
+        */
 
         // ========== Accordion Logic ==========
         document.querySelectorAll('.accordion-button').forEach(button => {
@@ -832,7 +821,3 @@
 
 </body>
 </html>
-
-
-
-
