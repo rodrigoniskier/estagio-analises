@@ -53,74 +53,43 @@
             transform: rotate(180deg);
         }
 
+        /* Estilo da Seção Início (com imagem de fundo) */
+        #inicio {
+            background-image: url('fundobiom.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
         /* Estilos para o Quiz */
         .quiz-option {
-            transition: all 0.2s ease;
-        }
-        .quiz-option.correct {
-            background-color: #dcfce7; /* green-100 */
-            border-color: #22c55e; /* green-500 */
-        }
-        .quiz-option.incorrect {
-            background-color: #fee2e2; /* red-100 */
-            border-color: #ef4444; /* red-500 */
-        }
-        .quiz-option input:checked + label {
-            border-color: #0d9488; /* teal-600 */
-            box-shadow: 0 0 0 2px #0d9488;
-        }
-    </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
-
-    <!-- ========== Header ========== -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-teal-700 flex items-center">
-                <i data-lucide="microscope" class="mr-2"></i>
-                Análises Clínicas
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#inicio" class="text-gray-600 hover:text-teal-600 transition-colors">Início</a>
-                <a href="#fundamentos" class="text-gray-600 hover:text-teal-600 transition-colors">Fundamentos</a>
-                <a href="#pre-analitica" class="text-gray-600 hover:text-teal-600 transition-colors">Pré-Analítica</a>
-                <a href="#setores" class="text-gray-600 hover:text-teal-600 transition-colors">Setores</a>
-                <a href="#quiz" class="text-gray-600 hover:text-teal-600 transition-colors">Quiz</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-teal-600">
-                <i data-lucide="menu"></i>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="#inicio" class="block text-gray-600 hover:text-teal-600 transition-colors">Início</a>
-            <a href="#fundamentos" class="block text-gray-600 hover:text-teal-600 transition-colors">Fundamentos</a>
-            <a href="#pre-analitica" class="block text-gray-600 hover:text-teal-600 transition-colors">Pré-Analítica</a>
-            <a href="#setores" class="block text-gray-600 hover:text-teal-600 transition-colors">Setores</a>
-            <a href="#quiz" class="block text-gray-600 hover:text-teal-600 transition-colors">Quiz</a>
-        </div>
-    </header>
-
+/* ... existing code ... -->
     <main>
-        <!-- ========== Seção Início (Vídeo) ========== -->
-        <section id="inicio" class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
-            <!-- Vídeo de Fundo -->
-            <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-                <!-- Alterado o SRC para o link direto do Google Drive -->
-                <source src="https://drive.google.com/uc?export=view&id=11S61SiZ64XNrsPKOqhmL5YqH53tUdI-Y" type="video/mp4">
-                Seu navegador não suporta o vídeo de fundo.
-            </video>
+        <!-- ========== Seção Início (Fundo Imagem + Link Download) ========== -->
+        <section id="inicio" class="relative h-screen overflow-hidden">
+            <!-- Iframe Removido -->
             
-            <!-- Overlay Escuro -->
+            <!-- Overlay Escuro (Mantido para legibilidade do texto sobre a imagem) -->
             <div class="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-10"></div>
             
             <!-- Conteúdo de Texto -->
-            <div class="relative z-20 p-6">
+            <div class="relative z-20 h-full flex flex-col items-center justify-center text-white text-center p-6">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">Biomedicina e Análises Clínicas</h1>
                 <p class="text-lg md:text-2xl mb-8 animate-fade-in-up">Bem-vindo à linha de frente do diagnóstico.</p>
-                <a href="#fundamentos" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                    Começar a Explorar
-                </a>
+                
+                <!-- Container dos Botões -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#fundamentos" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        Começar a Explorar
+                    </a>
+                    <a href="https://drive.google.com/file/d/11S61SiZ64XNrsPKOqhmL5YqH53tUdI-Y/view?usp=drive_link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="bg-white text-teal-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <i data-lucide="download"></i>
+                        <span>Baixar Vídeo</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -331,7 +300,7 @@
             </div>
         </section>
 
-        <!-- ========== Seção Setores (Core) ========== -->
+        <!-- ========== Seção Setores (Core) - CONTEÚDO APROFUNDADO ========== -->
         <section id="setores" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-teal-800 mb-12 flex items-center justify-center">
@@ -351,12 +320,33 @@
                         </button>
                         <div class="accordion-content">
                             <div class="p-5 border-t">
-                                <p class="mb-4">Quantifica substâncias químicas (metabólitos, enzimas, eletrólitos) no soro para avaliar a função de órgãos vitais.</p>
-                                <ul class="list-disc list-inside space-y-1 text-sm">
-                                    <li><b>Função Renal:</b> Ureia, Creatinina.</li>
-                                    <li><b>Metabolismo Glicídico:</b> Glicose, Hemoglobina Glicada (HbA1c).</li>
-                                    <li><b>Perfil Lipídico:</b> Colesterol Total, HDL, LDL, Triglicerídeos.</li>
-                                    <li><b>Hepatograma (Fígado):</b> TGO/AST, TGP/ALT, Bilirrubinas, GGT.</li>
+                                <p class="mb-4">Quantifica metabólitos, enzimas, eletrólitos e proteínas no soro ou plasma. É o pilar para avaliar a função de órgãos vitais e o metabolismo. Os principais painéis incluem:</p>
+                                <ul class="list-disc list-inside space-y-3 text-sm">
+                                    <li><b>Função Renal:</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Ureia:</b> Produto final do metabolismo de proteínas; pode aumentar por dieta hiperproteica ou problemas renais.</li>
+                                            <li><b>Creatinina:</b> Produto do metabolismo muscular; é o marcador mais confiável da filtração glomerular (função renal).</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Metabolismo Glicídico (Diabetes):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Glicose de Jejum:</b> Mede o açúcar no sangue no momento da coleta.</li>
+                                            <li><b>Hemoglobina Glicada (HbA1c):</b> Mede a média da glicose nos últimos 2-3 meses (ligação da glicose na hemoglobina).</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Perfil Lipídico (Risco Cardíaco):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Colesterol Total, HDL ("bom"), LDL ("ruim") e VLDL:</b> Avaliam o risco de aterosclerose.</li>
+                                            <li><b>Triglicerídeos:</b> Principal gordura de reserva do corpo.</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Hepatograma (Função Hepática):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>TGO/AST e TGP/ALT:</b> Enzimas que indicam lesão nas células do fígado (hepatócitos). TGP é mais específica do fígado.</li>
+                                            <li><b>GGT e Fosfatase Alcalina (FA):</b> Enzimas que indicam problemas nas vias biliares (colestase).</li>
+                                            <li><b>Bilirrubinas (Total, Direta, Indireta):</b> Avaliam o metabolismo da bile e possíveis causas de icterícia.</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -373,24 +363,33 @@
                         </button>
                         <div class="accordion-content">
                             <div class="p-5 border-t">
-                                <p class="mb-4">Estudo dos elementos do sangue (hemácias, leucócitos, plaquetas) e da coagulação. A automação (contador) e a microscopia (lâmina) são complementares.</p>
-                                <p class="font-semibold mb-3">Achados Críticos na Lâmina:</p>
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <figure>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Sickle_cell_anemia_blood_smear_2015_01_20.jpg" 
-                                             alt="Lâmina de Anemia Falciforme" 
-                                             class="rounded-lg shadow-md w-full h-48 object-cover"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/ef4444/white?text=Drepanócitos';">
-                                        <figcaption class="text-sm text-center mt-1"><b>Anemia Falciforme:</b> Presença de <b>Drepanócitos</b> (hemácias em foice).<br>(Fonte: Wikimedia Commons)</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Atypical_lymphocyte_%285098236173%29.jpg" 
-                                             alt="Lâmina com Linfócito Atípico" 
-                                             class="rounded-lg shadow-md w-full h-48 object-cover"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/8b5cf6/white?text=Linfócito+Atípico';">
-                                        <figcaption class="text-sm text-center mt-1"><b>Viroses (ex: Dengue):</b> Presença de <b>Linfócitos Atípicos</b> (Reativos).<br>(Fonte: Wikimedia Commons)</figcaption>
-                                    </figure>
-                                </div>
+                                <p class="mb-4">Estuda os elementos celulares do sangue (usando o tubo de EDTA) e a coagulação (tubo de Citrato). O principal exame é o <b>Hemograma</b>, dividido em três análises principais:</p>
+                                <ul class="list-disc list-inside space-y-3 text-sm">
+                                    <li><b>Eritrograma (Série Vermelha):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Hemácias, Hemoglobina, Hematócrito:</b> Avaliam a presença de Anemia (valores baixos) ou Policitemia (valores altos).</li>
+                                            <li><b>Índices Hematimétricos (VCM, HCM, CHCM):</b> Classificam a anemia. Ex: VCM baixo (microcítica, comum na falta de ferro), VCM alto (macrocítica, comum na falta de B12).</li>
+                                            <li><b>RDW:</b> Mede a variação de tamanho das hemácias (anisocitose).</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Leucograma (Série Branca):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Leucócitos Totais:</b> Contagem total de células de defesa.</li>
+                                            <li><b>Contagem Diferencial:</b> Identifica o tipo de célula predominante, essencial para o diagnóstico:</li>
+                                            <li><b>Neutrófilos:</b> Aumentados em infecções bacterianas.</li>
+                                            <li><b>Linfócitos:</b> Aumentados em infecções virais (ex: Dengue, Mononucleose).</li>
+                                            <li><b>Eosinófilos:</b> Aumentados em alergias ou parasitoses.</li>
+                                            <li><b>Bastonetes:</b> Aumento (desvio à esquerda) indica infecção bacteriana grave.</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Plaquetograma:</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li>Contagem de <b>Plaquetas:</b> Essenciais para a coagulação. A queda (plaquetopenia) é crítica na Dengue.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="mt-4"><b>Coagulação (Tubo Azul):</b> Avalia o tempo de coagulação através do <b>TP (INR)</b> (via extrínseca, monitora varfarina) e <b>TTPA</b> (via intrínseca, monitora heparina).</p>
+                                <!-- Figuras removidas conforme solicitado -->
                             </div>
                         </div>
                     </div>
@@ -406,24 +405,33 @@
                         </button>
                         <div class="accordion-content">
                             <div class="p-5 border-t">
-                                <p class="mb-4">Uma "biópsia líquida" dos rins e trato urinário. Divide-se em análise Física (cor, aspecto), Química (fita reagente) e Microscópica (sedimento).</p>
-                                <p class="font-semibold mb-3">Achados na Sedimentoscopia:</p>
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <figure>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Oxaluria.jpg/640px-Oxaluria.jpg" 
-                                             alt="Cristais de Oxalato de Cálcio" 
-                                             class="rounded-lg shadow-md w-full h-48 object-cover"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/6b7280/white?text=Cristais+de+Oxalato';">
-                                        <figcaption class="text-sm text-center mt-1"><b>Litíase (Cálculo Renal):</b> Frequente presença de <b>Cristais</b> (ex: Oxalato de Cálcio).<br>(Fonte: Wikimedia Commons)</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pyuria.jpg/640px-Pyuria.jpg" 
-                                             alt="Piócitos na urina" 
-                                             class="rounded-lg shadow-md w-full h-48 object-cover"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/f59e0b/white?text=Piócitos+(Leucócitos)';">
-                                        <figcaption class="text-sm text-center mt-1"><b>Infecção Urinária (ITU):</b> Aumento de <b>Leucócitos (Piócitos)</b> e presença de bactérias.<br>(Fonte: Wikimedia Commons)</figcaption>
-                                    </figure>
-                                </div>
+                                <p class="mb-4">Uma "biópsia líquida" dos rins. O Exame de Urina de Rotina (EAS) é dividido em três etapas críticas que se complementam:</p>
+                                <ul class="list-disc list-inside space-y-3 text-sm">
+                                    <li><b>Análise Física:</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Cor:</b> Varia de amarelo-claro (diluída) a âmbar (concentrada). Cores anormais (ex: vermelha) indicam sangue.</li>
+                                            <li><b>Aspecto:</b> Límpido (normal) ou Turvo (pode indicar infecção, cristais).</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Análise Química (Fita Reagente):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Densidade:</b> Avalia a capacidade do rim de concentrar a urina.</li>
+                                            <li><b>pH:</b> Acidez ou alcalinidade.</li>
+                                            <li><b>Glicose e Cetonas:</b> Positivos sugerem Diabetes Mellitus descompensado.</li>
+                                            <li><b>Proteínas:</b> Positivo é um marcador chave de Lesão Renal.</li>
+                                            <li><b>Nitrito:</b> Fortemente sugestivo de Infecção Urinária (ITU) por bactérias Gram-negativas.</li>
+                                            <li><b>Leucócitos (Esterase):</b> Sugestivo de inflamação/infecção.</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Microscopia (Sedimentoscopia):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Células:</b> Contagem de Leucócitos (piócitos, indicam ITU) e Hemácias (hematúria).</li>
+                                            <li><b>Cilindros:</b> "Moldes" dos túbulos renais. Cilindros hialinos são comuns, mas granulosos ou celulares indicam Doença Renal Grave.</li>
+                                            <li><b>Cristais:</b> Podem indicar tendência à formação de cálculos renais (ex: Oxalato de Cálcio).</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- Figuras removidas conforme solicitado -->
                             </div>
                         </div>
                     </div>
@@ -439,24 +447,30 @@
                         </button>
                         <div class="accordion-content">
                             <div class="p-5 border-t">
-                                <p class="mb-4">Identificação de parasitas intestinais (ovos, larvas, cistos) por microscopia. O "olho treinado" é essencial.</p>
-                                <p class="font-semibold mb-3">Morfologias Essenciais:</p>
-                                <div class="grid md:grid-cols-2 gap-4">
-                                    <figure>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ascaris_lumbricoides_fertilized_egg_2.jpg/640px-Ascaris_lumbricoides_fertilized_egg_2.jpg" 
-                                             alt="Ovo de Ascaris lumbricoides" 
-                                             class="rounded-lg shadow-md w-full h-48 object-cover"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/84cc16/white?text=Ovo+Ascaris';">
-                                        <figcaption class="text-sm text-center mt-1"><b>Ascaris lumbricoides:</b> Ovo com casca cortical mamelonada característica.<br>(Fonte: Wikimedia Commons)</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Schistosoma_mansoni_egg_800x.jpg/640px-Schistosoma_mansoni_egg_800x.jpg" 
-                                             alt="Ovo de Schistosoma mansoni" 
-                                             class="rounded-lg shadow-md w-full h-48 object-cover"
-                                             onerror="this.onerror=null; this.src='https://placehold.co/400x200/a16207/white?text=Ovo+S.+mansoni';">
-                                        <figcaption class="text-sm text-center mt-1"><b>Schistosoma mansoni:</b> Ovo com <b>espinho lateral</b> nítido (achado pelo método de Lutz/HPJ).<br>(Fonte: Wikimedia Commons)</figcaption>
-                                    </figure>
-                                </div>
+                                <p class="mb-4">Identificação microscópica de ovos, larvas de helmintos (vermes) e cistos de protozoários. A escolha do método (técnica) é fundamental, pois diferentes parasitas são detectados por diferentes métodos:</p>
+                                <ul class="list-disc list-inside space-y-3 text-sm">
+                                    <li><b>Exame Direto (a fresco com salina/lugol):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li>Usado para pesquisar trofozoítos (formas móveis) de protozoários, como *Entamoeba histolytica*, em fezes diarreicas.</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Métodos de Concentração por Sedimentação (Ex: Lutz/HPJ, Ritchie):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li>Usam a gravidade. São ideais para ovos "pesados", como *Schistosoma mansoni* (espinho lateral) e *Ascaris lumbricoides*.</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Métodos de Concentração por Flutuação (Ex: Faust, Willis):</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li>Usam soluções de alta densidade (ex: sulfato de zinco). Ovos e cistos "leves" flutuam. Ideal para ovos de Ancilostomídeos e cistos de *Giardia*.</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>Métodos Especiais:</b>
+                                        <ul class="list-inside list-[circle] ml-5">
+                                            <li><b>Baermann-Moraes:</b> Usa a migração ativa das larvas em água aquecida (termotropismo/hidrotropismo). É o método de escolha para *Strongyloides stercoralis*.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- Figuras removidas conforme solicitado -->
                             </div>
                         </div>
                     </div>
@@ -472,8 +486,14 @@
                         </button>
                         <div class="accordion-content">
                             <div class="p-5 border-t">
-                                <p class="mb-4">Investiga a resposta imune: procura por <b>Anticorpos (IgM, IgG)</b> ou <b>Antígenos (NS1, HBsAg)</b>. A metodologia vai de Testes Rápidos a Quimioluminescência.</p>
-                                <h4 class="font-semibold mb-3">Esquema: Janela de Diagnóstico da Dengue</h4>
+                                <p class="mb-4">Investiga a resposta imune do corpo. Foca na detecção de <b>Anticorpos</b> (a resposta do paciente) ou <b>Antígenos</b> (partes do próprio agente infeccioso).</p>
+                                <h4 class="font-semibold mb-2 text-base">A Dinâmica IgM vs. IgG:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-sm mb-4">
+                                    <li><b>IgM (Imunoglobulina M):</b> É o anticorpo de "fase aguda". É o primeiro a ser produzido. IgM positivo (reagente) indica <b>infecção recente ou ativa</b>. Tende a desaparecer após semanas ou meses.</li>
+                                    <li><b>IgG (Imunoglobulina G):</b> É o anticorpo de "memória". Aparece logo após o IgM e, em muitos casos, permanece positivo (reagente) por <b>toda a vida</b>. Indica infecção passada ou vacinação (imunidade).</li>
+                                </ul>
+                                
+                                <h4 class="font-semibold mb-3">Exemplos Críticos (Dengue):</h4>
                                 <div class="bg-gray-100 p-4 rounded-lg">
                                     <p class="font-bold text-center mb-2">Início dos Sintomas (Febre)</p>
                                     <!-- Linha do Tempo -->
@@ -812,4 +832,7 @@
 
 </body>
 </html>
+
+
+
 
