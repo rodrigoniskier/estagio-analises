@@ -646,7 +646,7 @@
                 certUserName.textContent = currentUser.name;
                 certUserCourse.textContent = currentUser.course;
                 certUserInstitution.textContent = currentUser.institution;
-                certModuleName.textContent = currentQuizData.title || `Módulo ${currentQuiz.id}`; // Usa o título do JSON
+certModuleName.textContent = currentQuizData.title || "[Nome do Módulo]";
                 certScore.textContent = score;
             }
 
@@ -689,7 +689,7 @@
                     }
 
                     currentQuizData = allQuizData[moduleId]; // Armazena os dados do quizz (perguntas, título)
-                    currentQuiz.title = card.textContent; // Armazena o título do card
+    
                     
                     quizTitle.textContent = `Quizz: ${currentQuizData.title || currentQuiz.title}`;
                     
