@@ -6,6 +6,7 @@
     <title>Portal de Estágio - Análises Clínicas</title>
     
     <style>
+        /* Reset básico e fontes */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -17,6 +18,7 @@
             display: flex;
             min-height: 100vh;
         }
+        /* --- Barra Lateral (Sidebar) --- */
         .sidebar {
             width: 280px;
             background-color: #ffffff;
@@ -53,11 +55,13 @@
             color: #ffffff;
             font-weight: 600;
         }
+        /* --- Área de Conteúdo Principal --- */
         .main-content {
             flex-grow: 1;
             padding: 40px;
             overflow-y: auto;
         }
+        /* --- Cabeçalho (Header) --- */
         header {
             background-color: #005a9c;
             color: white;
@@ -71,6 +75,7 @@
             font-weight: 300;
             color: #d0eaff;
         }
+        /* Título do módulo */
         #module-title {
             font-size: 2.5rem;
             color: #222;
@@ -78,6 +83,7 @@
             border-bottom: 3px solid #ffc107;
             padding-bottom: 10px;
         }
+        /* Container do Vídeo */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -96,25 +102,176 @@
             width: 100%;
             height: 100%;
         }
+        /* Descrição do Módulo */
         #module-description {
             background-color: #ffffff;
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: none; /* Escondido por padrão */
         }
+        
+        /* --- INÍCIO: MENSAGEM DE BOAS-VINDAS (ATUALIZADO) --- */
         #welcome-message {
-            font-size: 1.5rem;
-            font-weight: 500;
-            text-align: center;
-            padding: 100px 40px;
+            /* Agora é um container de imagem com flex */
+            padding: 40px;
             border-radius: 8px;
             background-image: url('fundobiom.jpg');
             background-size: cover;
             background-position: center;
-            color: #ffffff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
         }
-        #welcome-message p { margin: 0; }
+
+        /* Novo "cartão" de conteúdo semi-transparente */
+        .welcome-content {
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro 70% opaco */
+            padding: 30px 40px;
+            border-radius: 8px;
+            color: #ffffff; /* Texto branco */
+            max-width: 800px; /* Limita a largura */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .welcome-content .welcome-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        /* Divisor amarelo (cor de destaque) */
+        .welcome-content .welcome-divider {
+            border: 0;
+            height: 1px;
+            background: #ffc107;
+            opacity: 0.8;
+            margin: 25px 0;
+        }
+
+        /* Estilos para o perfil */
+        .profile-bio {
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .profile-bio h4 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .profile-bio .bio-email {
+            margin-top: 0;
+        }
+        .profile-bio .bio-email a {
+            color: #d0eaff; /* Azul claro (do header) */
+            text-decoration: none;
+            font-style: italic;
+        }
+        .profile-bio .bio-email a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-bio .bio-details {
+            margin: 10px 0;
+        }
+
+        .profile-bio .book-link {
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .profile-bio .book-link a {
+            color: #ffc107; /* Amarelo destaque */
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .profile-bio .book-link a:hover {
+            text-decoration: underline;
+        }
+        /* --- FIM: MENSAGEM DE BOAS-VINDAS (ATUALIZADO) --- */
+
+
+        /* --- ESTILOS DE CONTEÚDO INTERATIVO (sem mudanças) --- */
+        .highlight-box {
+            background-color: #fff9e6;
+            border-left: 5px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .highlight-box p:last-child { margin-bottom: 0; }
+        .alert-box-ne {
+            background-color: #e6f7ec;
+            border-left: 5px solid #218838;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .alert-box-danger {
+            background-color: #fdecea;
+            border-left: 5px solid #dc3545;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        details {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 15px 20px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            color: #005a9c;
+        }
+        summary::before {
+            content: '+';
+            font-family: monospace;
+            font-size: 1.5rem;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #005a9c;
+        }
+        details[open] summary::before { content: '−'; }
+        details div {
+            padding: 0 20px 20px 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .table-modern {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table-modern th {
+            background-color: #005a9c;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .table-modern td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #ffffff;
+        }
+        .table-modern tr:last-child td { border-bottom: none; }
+        .table-modern tr:hover td { background-color: #f9f9f9; }
     </style>
 </head>
 <body>
@@ -143,15 +300,38 @@
         </nav>
 
         <main class="main-content">
+            
             <h2 id="module-title">Bem-vindo(a)!</h2>
+
             <div id="welcome-message">
-                <p>Selecione um módulo na barra lateral esquerda para começar os seus estudos.</p>
+                <div class="welcome-content">
+                    <p class="welcome-text">Selecione um módulo na barra lateral esquerda para começar os seus estudos.</p>
+                    
+                    <hr class="welcome-divider">
+                    
+                    <div class="profile-bio">
+                        <h4>Prof. Rodrigo Niskier Ferreira Barbosa</h4>
+                        <p class="bio-email">
+                            <a href="mailto:rodrigo.niskier@unipe.edu.br">rodrigo.niskier@unipe.edu.br</a>
+                        </p>
+                        <p class="bio-details">
+                            Biomédico (2003, UFPE), especialista em Biologia Molecular (2006, UPE), mestre em Genética e Biologia Molecular (2007, UFRN). Professor do ensino superior desde 2007, lecionando Mecanismos de Agressão, Patológicos e de Defesa no curso de Medicina (UNIPE). Pesquisador nas áreas de Imunologia, Genética e Neoplasias. Desenvolvedor de aplicações Web com ferramentas de AI-LLM desde 2024.
+                        </p>
+                        <p class="book-link">
+                            Conheça meu livro 'Autoimunidade: Conexões Essenciais': 
+                            <a href="https://rodrigoniskier.github.io/portal-mapd/#:~:text=Autoimunidade%3A%20Conex%C3%B5es%20Essenciais%27%3A-,Acesse%20o%20link" target="_blank" rel="noopener noreferrer">Acesse o link</a>
+                        </p>
+                    </div>
+                </div>
             </div>
+
             <div class="video-container" id="video-wrapper">
                 <iframe id="video-player" src="" title="Videoaula do Módulo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+
             <div id="module-description">
                 </div>
+            
         </main>
     </div>
 
@@ -166,14 +346,15 @@
             const welcomeMessage = document.getElementById('welcome-message');
 
             // Na carga inicial, escondemos a descrição e o vídeo
+            // (Já definido no CSS, mas reforçamos aqui)
             videoWrapper.style.display = 'none';
             moduleDescriptionElement.style.display = 'none';
-
 
             moduleLinks.forEach(link => {
                 link.addEventListener('click', (event) => {
                     event.preventDefault(); 
                     
+                    // Esconde a mensagem de boas-vindas
                     if (welcomeMessage) {
                         welcomeMessage.style.display = 'none';
                     }
@@ -185,51 +366,36 @@
                     const jsonFile = link.dataset.json;
                     const moduleTitle = link.dataset.title;
 
-                    // Chama a função ATUALIZADA
                     loadModuleContent(jsonFile, moduleTitle, link);
                 });
             });
 
-            /**
-             * Função para carregar o conteúdo do módulo (VERSÃO FINAL).
-             * Ela usa 'fetch' para buscar os ficheiros JSON.
-             */
             async function loadModuleContent(jsonFile, title, activeLink) {
                 
                 updateActiveLink(activeLink);
 
-                // Feedback de carregamento
                 moduleTitleElement.textContent = `Carregando ${title}...`;
                 moduleDescriptionElement.innerHTML = '<p>A carregar conteúdo...</p>';
-                videoWrapper.style.display = 'none'; // Esconde vídeo enquanto carrega
+                videoWrapper.style.display = 'none'; 
 
-                // --- IMPLEMENTAÇÃO REAL (Fetch) ---
                 try {
-                    // 1. Busca o ficheiro JSON
                     const response = await fetch(jsonFile);
                     
-                    // 2. Verifica se a busca foi bem-sucedida
                     if (!response.ok) {
-                        // Erro 404 - Ficheiro não encontrado
                         if(response.status === 404) {
                             throw new Error(`Ficheiro ${jsonFile} não encontrado.`);
                         }
                         throw new Error(`Erro ao buscar o ficheiro: ${response.statusText}`);
                     }
                     
-                    // 3. Converte a resposta em JSON
                     const data = await response.json();
 
-                    // 4. Atualiza a página com os dados reais do JSON
                     moduleTitleElement.textContent = title;
-                    videoPlayer.src = data.videoUrl; // Link do vídeo vindo do JSON
-                    videoWrapper.style.display = 'block'; // Mostra o vídeo
-                    
-                    // Conteúdo (do JSON)
+                    videoPlayer.src = data.videoUrl;
+                    videoWrapper.style.display = 'block';
                     moduleDescriptionElement.innerHTML = data.content; 
 
                 } catch (error) {
-                    // Em caso de erro, exibe a mensagem na tela
                     console.error('Falha ao carregar o módulo:', error);
                     moduleTitleElement.textContent = "Erro ao carregar";
                     moduleDescriptionElement.innerHTML = `<p>Não foi possível carregar o conteúdo do módulo.</p>
@@ -238,9 +404,6 @@
                 }
             }
 
-            /**
-             * Função auxiliar para destacar o módulo ativo na barra lateral.
-             */
             function updateActiveLink(clickedLink) {
                 moduleLinks.forEach(link => {
                     link.classList.remove('active');
