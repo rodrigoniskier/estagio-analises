@@ -82,6 +82,7 @@
             font-weight: 300;
             color: #d0eaff;
         }
+        /* Título do módulo/vista */
         .view-title {
             font-size: 2.5rem;
             color: #222;
@@ -170,7 +171,6 @@
             font-weight: 600;
             color: #333;
         }
-        /* NOVO: Estilo para card desativado */
         .quiz-card.disabled {
             background-color: #f9f9f9;
             color: #aaa;
@@ -242,7 +242,7 @@
             margin-top: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        /* NOVO: Estilo para as perguntas */
+        /* NOVO: Estilo para as perguntas (que faltava) */
         .question-block {
             margin-bottom: 25px;
             border-bottom: 1px solid #f0f0f0;
@@ -358,30 +358,86 @@
 
         <main class="main-content">
             
-            <div id="welcome-view"> </div>
-
-            <div id="module-content-view" style="display: none;"> </div>
-            
-            <div id="quiz-card-view" style="display: none;">
-                <h2 class="view-title">Questões de Fixação</h2>
-                <p>Selecione um módulo para iniciar o quizz.</p>
-                <div class="quiz-card-container">
-                    <div class="quiz-card" data-module-id="1">Módulo 1: Controle de Qualidade</div>
-                    <div class="quiz-card" data-module-id="2">Módulo 2: Hematologia</div>
-                    <div class="quiz-card" data-module-id="3">Módulo 3: Bioquímica Clínica</div>
-                    <div class="quiz-card" data-module-id="4">Módulo 4: Urinálise</div>
-                    <div class="quiz-card" data-module-id="5">Módulo 5: Parasitologia</div>
-                    <div class="quiz-card" data-module-id="6">Módulo 6: Imunologia</div>
-                    <div class="quiz-card" data-module-id="7">Módulo 7: Diagnóstico Molecular</div>
-                    <div class="quiz-card" data-module-id="8">Módulo 8: Tópicos Especiais</div>
-                    <div class="quiz-card" data-module-id="9">Módulo 9: Integração Clínica</div>
-                    <div class="quiz-card" data-module-id="10">Módulo 10: Biossegurança</div>
+            <div id="welcome-view">
+                <div class="welcome-content">
+                    <p class="welcome-text">Selecione um módulo na barra lateral esquerda para começar os seus estudos.</p>
+                    <hr class="welcome-divider">
+                    <div class="profile-bio">
+                        <h4>Prof. Rodrigo Niskier Ferreira Barbosa</h4>
+                        <p class="bio-email"><a href="mailto:rodrigo.niskier@unipe.edu.br">rodrigo.niskier@unipe.edu.br</a></p>
+                        <p class="bio-details">
+                            Biomédico (2003, UFPE), especialista em Biologia Molecular (2006, UPE), mestre em Genética e Biologia Molecular (2007, UFRN). Professor do ensino superior desde 2007, lecionando Mecanismos de Agressão, Patológicos e de Defesa no curso de Medicina (UNIPE). Pesquisador nas áreas de Imunologia, Genética e Neoplasias. Desenvolvedor de aplicações Web com ferramentas de AI-LLM desde 2024.
+                        </p>
+                        <p class="book-link">
+                            Conheça meu livro 'Autoimunidade: Conexões Essenciais': 
+                            <a href="https://rodrigoniskier.github.io/portal-mapd/#:~:text=Autoimunidade%3A%20Conex%C3%B5es%20Essenciais%27%3A-,Acesse%20o%20link" target="_blank" rel="noopener noreferrer">Acesse o link</a>
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div id="quiz-active-view" style="display: none;"> </div>
+            <div id="module-content-view" style="display: none;">
+                <h2 id="module-title" class="view-title"></h2>
+                <div class="video-container" id="video-wrapper">
+                    <iframe id="video-player" src="" title="Videoaula do Módulo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="module-description"></div>
+            </div>
+            
+            <div id="quiz-card-view" style="display: none;">
+                <h2 class="view-title">Questões de Fixação</h2>
+                <p>A carregar quizzes...</p>
+                <div class="quiz-card-container">
+                    <div class="quiz-card disabled" data-module-id="1">Módulo 1: Controle de Qualidade</div>
+                    <div class="quiz-card disabled" data-module-id="2">Módulo 2: Hematologia</div>
+                    <div class="quiz-card disabled" data-module-id="3">Módulo 3: Bioquímica Clínica</div>
+                    <div class="quiz-card disabled" data-module-id="4">Módulo 4: Urinálise</div>
+                    <div class="quiz-card disabled" data-module-id="5">Módulo 5: Parasitologia</div>
+                    <div class="quiz-card disabled" data-module-id="6">Módulo 6: Imunologia</div>
+                    <div class="quiz-card disabled" data-module-id="7">Módulo 7: Diagnóstico Molecular</div>
+                    <div class="quiz-card disabled" data-module-id="8">Módulo 8: Tópicos Especiais</div>
+                    <div class="quiz-card disabled" data-module-id="9">Módulo 9: Integração Clínica</div>
+                    <div class="quiz-card disabled" data-module-id="10">Módulo 10: Biossegurança</div>
+                </div>
+            </div>
 
-            <div id="certificate-view" style="display: none;"> </div>
+            <div id="quiz-active-view" style="display: none;">
+                <button class="back-btn" id="back-to-cards">← Voltar aos Módulos</button>
+                <h2 id="quiz-title" class="view-title"></h2>
+                
+                <form id="user-info-form">
+                    <h3>Identificação do Aluno</h3>
+                    <p>Preencha os seus dados para gerar o certificado ao final.</p>
+                    <label for="user-name">Nome Completo:</label>
+                    <input type="text" id="user-name" required>
+                    <label for="user-course">Curso:</label>
+                    <input type="text" id="user-course" required>
+                    <label for="user-institution">Instituição de Ensino:</label>
+                    <input type="text" id="user-institution" required>
+                    <button type="submit" class="quiz-btn">Iniciar Quizz</button>
+                </form>
+
+                <div id="quiz-questions-area" style="display: none;">
+                    <div id="questions-container">
+                        </div>
+                    <button class="quiz-btn" id="submit-quiz-btn" style="margin-top: 20px;">Finalizar e Ver Nota</button>
+                </div>
+            </div>
+
+            <div id="certificate-view" style="display: none;">
+                <div class="certificate-container">
+                    <h2>CERTIFICADO DE CONCLUSÃO</h2>
+                    <p>Certificamos que</p>
+                    <h1 id="cert-user-name">[Nome do Aluno]</h1>
+                    <p>Do curso de <span id="cert-user-course">[Curso]</span> da instituição <span id="cert-user-institution">[Instituição]</span>, concluiu o quizz do</p>
+                    <h3 id="cert-module-name">[Nome do Módulo]</h3>
+                    <p>Com a nota:</p>
+                    <h2 id="cert-score">[Nota Final]</h2>
+                    <p class="motivation-message">"Sua dedicação é o primeiro passo para uma carreira brilhante. Continue a estudar!"</p>
+                    <p class="signature">Prof. Rodrigo Niskier</p>
+                </div>
+                <button class="quiz-btn" id="back-to-quiz-list-from-cert" style="margin-top: 20px;">Voltar aos Módulos</button>
+            </div>
             
         </main>
     </div>
@@ -430,7 +486,7 @@
             const certModuleName = document.getElementById('cert-module-name');
             const certScore = document.getElementById('cert-score');
 
-            // --- VARIÁVEIS DE ESTADO (ATUALIZADO) ---
+            // --- VARIÁVEIS DE ESTADO ---
             let allQuizData = null; // Armazenará TODOS os quizzes
             let currentQuizData = null; // Armazena as perguntas do quizz ATIVO
             let currentUser = { name: '', course: '', institution: '' };
@@ -498,81 +554,85 @@
                     const response = await fetch('quizzes.json');
                     if (!response.ok) throw new Error('Falha ao carregar o ficheiro de quizzes.');
                     allQuizData = await response.json();
-                    console.log("Dados de quizzes carregados com sucesso.");
-                    // Ativa os cards que agora têm dados
+                    
+                    // Atualiza o texto e ativa os cards
+                    document.querySelector('#quiz-card-view p').textContent = 'Selecione um módulo para iniciar o quizz.';
                     quizCards.forEach(card => {
                         const moduleId = 'modulo' + card.dataset.moduleId;
-                        if (allQuizData[moduleId]) {
+                        if (allQuizData[moduleId] && allQuizData[moduleId].questions) {
                             card.classList.remove('disabled');
                         } else {
                             card.classList.add('disabled');
+                            console.warn(`Dados do quizz não encontrados para: ${moduleId}`);
                         }
                     });
                 } catch (error) {
                     console.error(error);
-                    // Desativa todos os cards se o ficheiro falhar
-                    quizCards.forEach(card => card.classList.add('disabled'));
-                    alert('Erro ao carregar os quizzes. Por favor, recarregue a página.');
+                    document.querySelector('#quiz-card-view p').textContent = 'Erro ao carregar os quizzes. Por favor, tente recarregar a página.';
                 }
             }
             
             /**
-             * Renderiza as perguntas do quizz ativo (agora lendo da variável).
+             * Renderiza as perguntas do quizz ativo (agora lendo do JSON).
              */
             function loadQuiz() {
                 questionsContainer.innerHTML = ''; // Limpa perguntas anteriores
                 
-                // (Quando tivermos o JSON real, usaremos a estrutura dele)
-                // --- SIMULAÇÃO (será substituída) ---
-                if (!currentQuizData) {
+                if (!currentQuizData || !currentQuizData.questions) {
                     questionsContainer.innerHTML = '<p>Erro: Não foi possível carregar as perguntas.</p>';
                     return;
                 }
-                
-                // (A estrutura real do JSON será definida a seguir)
-                // Exemplo de como será quando tivermos o JSON:
-                /*
+
+                // Itera sobre as perguntas do JSON
                 currentQuizData.questions.forEach((q, index) => {
-                    const questionId = `q${index}`;
+                    const questionId = `q${index}`; // Nome único para o grupo de rádio
+                    
+                    // Cria o HTML para as opções de rádio
                     let optionsHtml = q.options.map((option, i) => `
                         <label>
                             <input type="radio" name="${questionId}" value="${i}">
                             ${option}
                         </label>
-                    `).join('');
+                    `).join(''); // Junta todas as strings <label>
 
+                    // Cria o bloco completo da pergunta
                     questionsContainer.innerHTML += `
-                        <div class="question-block" data-correct-answer="${q.correctAnswer}">
+                        <div class="question-block" data-correct-index="${q.correctAnswer}">
                             <p>${index + 1}. ${q.text}</p>
                             ${optionsHtml}
                         </div>
                     `;
                 });
-                */
-
-                // --- SIMULAÇÃO ATUAL ---
-                questionsContainer.innerHTML = `
-                    <p>Perguntas para o <strong>${currentQuiz.title}</strong> apareceriam aqui.</p>
-                    <div class="question-block" data-correct-answer="b">
-                        <p>1. Pergunta de exemplo para este módulo?</p>
-                        <label><input type="radio" name="q1" value="a"> Opção A</label>
-                        <label><input type="radio" name="q1" value="b"> Opção B (Correta)</label>
-                        <label><input type="radio" name="q1" value="c"> Opção C</label>
-                    </div>
-                    <div class="question-block" data-correct-answer="a">
-                        <p>2. Segunda pergunta de exemplo?</p>
-                        <label><input type="radio" name="q2" value="a"> Opção A (Correta)</label>
-                        <label><input type="radio" name="q2" value="b"> Opção B</label>
-                    </div>
-                `;
             }
 
             /**
-             * Calcula a nota (SIMULADO).
+             * Calcula a nota (lendo as respostas).
              */
             function calculateScore() {
-                // (A lógica real de verificação virá aqui, lendo as respostas)
-                return "10/10 (100%)";
+                let score = 0;
+                const questionBlocks = questionsContainer.querySelectorAll('.question-block');
+                const totalQuestions = questionBlocks.length;
+
+                if (totalQuestions === 0) return "0/0 (0%)";
+
+                questionBlocks.forEach((block, index) => {
+                    const questionId = `q${index}`;
+                    // Encontra a resposta correta guardada no HTML (como string)
+                    const correctIndex = block.dataset.correctIndex;
+                    
+                    // Encontra o input que foi selecionado pelo utilizador
+                    const selectedInput = block.querySelector(`input[name="${questionId}"]:checked`);
+                    
+                    if (selectedInput) {
+                        // Compara o valor selecionado (ex: "1") com o índice correto
+                        if (selectedInput.value === correctIndex) {
+                            score++;
+                        }
+                    }
+                });
+
+                const percentage = Math.round((score / totalQuestions) * 100);
+                return `${score}/${totalQuestions} (${percentage}%)`;
             }
 
             /**
@@ -582,7 +642,7 @@
                 certUserName.textContent = currentUser.name;
                 certUserCourse.textContent = currentUser.course;
                 certUserInstitution.textContent = currentUser.institution;
-                certModuleName.textContent = currentQuiz.title;
+                certModuleName.textContent = currentQuizData.title || `Módulo ${currentQuiz.id}`; // Usa o título do JSON
                 certScore.textContent = score;
             }
 
@@ -605,10 +665,9 @@
                 showView('#quiz-card-view');
             });
 
-            // Clica num Card de Quizz (LÓGICA ATUALIZADA)
+            // Clica num Card de Quizz
             quizCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    // Verifica se os quizzes já foram carregados
                     if (allQuizData === null) {
                         alert('Os dados do quizz ainda estão a ser carregados ou falharam. Tente novamente em alguns segundos.');
                         return;
@@ -618,19 +677,17 @@
                         return;
                     }
 
-                    const moduleId = 'modulo' + card.dataset.moduleId; // ex: "modulo1"
+                    const moduleId = 'modulo' + card.dataset.moduleId;
                     
-                    // Verifica se os dados para este módulo existem no JSON carregado
                     if (!allQuizData[moduleId]) {
                         alert('Erro: Não foi possível encontrar as perguntas para este módulo no ficheiro JSON.');
                         return;
                     }
 
-                    // Armazena os dados do quizz atual
-                    currentQuizData = allQuizData[moduleId]; // Contém as perguntas
-                    currentQuiz.title = card.textContent;
+                    currentQuizData = allQuizData[moduleId]; // Armazena os dados do quizz (perguntas, título)
+                    currentQuiz.title = card.textContent; // Armazena o título do card
                     
-                    quizTitle.textContent = `Quizz: ${currentQuiz.title}`;
+                    quizTitle.textContent = `Quizz: ${currentQuizData.title || currentQuiz.title}`;
                     
                     showView('#quiz-active-view');
                     userInfoForm.style.display = 'block';
@@ -654,12 +711,12 @@
                 userInfoForm.style.display = 'none';
                 quizQuestionsArea.style.display = 'block';
                 
-                loadQuiz(); // Carrega as perguntas (simulado)
+                loadQuiz(); // Carrega as perguntas REAIS
             });
 
             // Botão "Finalizar Quizz"
             submitQuizBtn.addEventListener('click', () => {
-                const score = calculateScore(); // Simulado
+                const score = calculateScore(); // Calcula a nota REAL
                 generateCertificate(score);
                 showView('#certificate-view');
             });
@@ -670,7 +727,7 @@
             });
 
             // --- 4. ESTADO INICIAL ---
-            showView('#welcome-view'); // Começa na vista de boas-vindas
+            showView('#welcome-view'); 
             loadAllQuizData(); // Carrega o JSON único de quizzes em segundo plano
         });
     </script>
