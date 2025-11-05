@@ -56,6 +56,7 @@
             color: #ffffff;
             font-weight: 600;
         }
+        /* NOVO: Divisor da barra lateral */
         .sidebar-divider {
             border: 0;
             border-top: 1px solid #f0f0f0;
@@ -93,6 +94,7 @@
 
         /* --- VISTA: BOAS-VINDAS (Perfil) --- */
         #welcome-view {
+            /* (Estilos anteriores movidos para aqui) */
             padding: 40px;
             border-radius: 8px;
             background-image: url('fundobiom.jpg');
@@ -149,7 +151,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
-        /* --- ESTILOS: VISTA DE CARDS DO QUIZZ --- */
+        /* --- NOVOS ESTILOS: VISTA DE CARDS DO QUIZZ --- */
         .quiz-card-container {
             display: flex;
             flex-wrap: wrap;
@@ -159,11 +161,11 @@
         .quiz-card {
             background-color: #ffffff;
             border: 1px solid #e0e0e0;
-            border-left: 5px solid #005a9c;
+            border-left: 5px solid #005a9c; /* Azul */
             border-radius: 8px;
             padding: 25px 30px;
-            flex-basis: 300px;
-            flex-grow: 1;
+            flex-basis: 300px; /* Base de largura */
+            flex-grow: 1; /* Permite crescer */
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -171,6 +173,7 @@
             font-weight: 600;
             color: #333;
         }
+        /* Estilo para card desativado */
         .quiz-card.disabled {
             background-color: #f9f9f9;
             color: #aaa;
@@ -180,10 +183,10 @@
         .quiz-card:not(.disabled):hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            border-left-color: #218838;
+            border-left-color: #218838; /* Verde no hover */
         }
         
-        /* --- ESTILOS: VISTA DO QUIZZ ATIVO --- */
+        /* --- NOVOS ESTILOS: VISTA DO QUIZZ ATIVO --- */
         .quiz-btn {
             background-color: #005a9c;
             color: white;
@@ -242,7 +245,7 @@
             margin-top: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        /* NOVO: Estilo para as perguntas (que faltava) */
+        /* Estilo para as perguntas */
         .question-block {
             margin-bottom: 25px;
             border-bottom: 1px solid #f0f0f0;
@@ -266,7 +269,7 @@
             margin-right: 10px;
         }
 
-        /* --- ESTILOS: VISTA DO CERTIFICADO --- */
+        /* --- NOVOS ESTILOS: VISTA DO CERTIFICADO --- */
         .certificate-container {
             background-color: #ffffff;
             border: 10px solid #005a9c;
@@ -350,6 +353,7 @@
                 <li><a class="sidebar-link module-link" data-json="modulo9.json" data-title="Módulo 9: Integração Clínica">9. Integração Clínica</a></li>
                 <li><a class="sidebar-link module-link" data-json="modulo10.json" data-title="Módulo 10: Biossegurança">10. Biossegurança</a></li>
             </ul>
+            
             <hr class="sidebar-divider">
             <ul id="extra-list">
                 <li><a class="sidebar-link" id="show-quiz-cards">📊 Questões de Fixação</a></li>
@@ -573,7 +577,7 @@
             }
             
             /**
-             * Renderiza as perguntas do quizz ativo (agora lendo do JSON).
+             * ATUALIZADO: Renderiza as perguntas do quizz ativo (agora lendo do JSON).
              */
             function loadQuiz() {
                 questionsContainer.innerHTML = ''; // Limpa perguntas anteriores
@@ -606,7 +610,7 @@
             }
 
             /**
-             * Calcula a nota (lendo as respostas).
+             * ATUALIZADO: Calcula a nota (lendo as respostas).
              */
             function calculateScore() {
                 let score = 0;
