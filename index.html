@@ -6,7 +6,6 @@
     <title>Portal de Estágio - Análises Clínicas</title>
     
     <style>
-        /* Reset básico e fontes */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -14,39 +13,27 @@
             color: #333;
             line-height: 1.6;
         }
-
-        /* Layout principal com Flexbox */
         .portal-container {
             display: flex;
             min-height: 100vh;
         }
-
-        /* Barra Lateral (Sidebar) */
         .sidebar {
             width: 280px;
             background-color: #ffffff;
             border-right: 1px solid #e0e0e0;
             padding: 25px;
             box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-            /* Adiciona scroll na sidebar caso a lista de módulos seja muito grande */
             overflow-y: auto; 
         }
-
         .sidebar h2 {
             font-size: 1.2rem;
             text-transform: uppercase;
-            color: #005a9c; /* Um tom de azul profissional */
+            color: #005a9c;
             letter-spacing: 1px;
             border-bottom: 2px solid #f0f0f0;
             padding-bottom: 10px;
         }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
         .sidebar li a {
             display: block;
             padding: 12px 15px;
@@ -57,60 +44,51 @@
             transition: background-color 0.3s, color 0.3s;
             margin-bottom: 5px;
         }
-
         .sidebar li a:hover {
-            background-color: #eef5fa;
-            color: #005a9c;
+            background-color: #e6f7ec;
+            color: #218838;
         }
-
-        /* Classe "active" que o JS vai adicionar */
         .sidebar li a.active {
             background-color: #005a9c;
             color: #ffffff;
             font-weight: 600;
         }
-
-        /* Área de Conteúdo Principal */
         .main-content {
-            flex-grow: 1; /* Faz esta área ocupar o resto do espaço */
+            flex-grow: 1;
             padding: 40px;
-            overflow-y: auto; /* Adiciona scroll se o conteúdo for grande */
+            overflow-y: auto;
         }
-
         header {
             background-color: #005a9c;
             color: white;
             padding: 20px 40px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
+        header h1 { margin: 0; font-size: 1.8rem; }
+        header h2 {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #d0eaff;
         }
-
-        /* Título do módulo */
         #module-title {
             font-size: 2.5rem;
             color: #222;
             margin-bottom: 20px;
-            border-bottom: 2px solid #005a9c;
+            border-bottom: 3px solid #ffc107;
             padding-bottom: 10px;
         }
-
-        /* Container do Vídeo (para responsividade) */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
             background: #000;
             border-radius: 8px;
             margin-bottom: 30px;
-            display: none; /* Escondido por padrão */
+            display: none;
         }
-
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -118,30 +96,32 @@
             width: 100%;
             height: 100%;
         }
-
-        /* Descrição do Módulo */
         #module-description {
             background-color: #ffffff;
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-
-        /* Estilo para a mensagem inicial */
         #welcome-message {
-            font-size: 1.2rem;
-            color: #555;
+            font-size: 1.5rem;
+            font-weight: 500;
             text-align: center;
-            padding: 50px 20px;
-            background-color: #fff;
+            padding: 100px 40px;
             border-radius: 8px;
+            background-image: url('fundobiom.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
+        #welcome-message p { margin: 0; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Portal de Estágio: Análises Clínicas (Biomedicina)</h1>
+        <h1>Portal de Estágio: Análises Clínicas</h1>
+        <h2>Prof. Rodrigo Niskier</h2>
     </header>
 
     <div class="portal-container">
@@ -157,34 +137,27 @@
                 <li><a href="#" class="module-link" data-json="modulo6.json" data-title="Módulo 6: Imunologia">6. Imunologia</a></li>
                 <li><a href="#" class="module-link" data-json="modulo7.json" data-title="Módulo 7: Diagnóstico Molecular">7. Diagnóstico Molecular</a></li>
                 <li><a href="#" class="module-link" data-json="modulo8.json" data-title="Módulo 8: Tópicos Especiais">8. Tópicos Especiais</a></li>
-                <li><a href="#" class="module-link" data-json="modulo9.json" data-title="Módulo 9: Integração Clínica">9. Integração Clínica</a></li>
+                <li><a href="#" class.module-link" data-json="modulo9.json" data-title="Módulo 9: Integração Clínica">9. Integração Clínica</a></li>
                 <li><a href="#" class="module-link" data-json="modulo10.json" data-title="Módulo 10: Biossegurança">10. Biossegurança</a></li>
             </ul>
         </nav>
 
         <main class="main-content">
-            
             <h2 id="module-title">Bem-vindo(a)!</h2>
-
             <div id="welcome-message">
                 <p>Selecione um módulo na barra lateral esquerda para começar os seus estudos.</p>
             </div>
-
             <div class="video-container" id="video-wrapper">
                 <iframe id="video-player" src="" title="Videoaula do Módulo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-
             <div id="module-description">
                 </div>
-            
         </main>
     </div>
 
     <script>
-        // Espera que todo o HTML da página seja carregado antes de executar o script
         document.addEventListener('DOMContentLoaded', () => {
 
-            // 1. Encontrar os elementos com os quais vamos interagir
             const moduleLinks = document.querySelectorAll('.module-link');
             const moduleTitleElement = document.getElementById('module-title');
             const videoWrapper = document.getElementById('video-wrapper');
@@ -192,69 +165,86 @@
             const moduleDescriptionElement = document.getElementById('module-description');
             const welcomeMessage = document.getElementById('welcome-message');
 
-            // 2. Adicionar um "ouvinte de clique" a CADA link de módulo
+            // Na carga inicial, escondemos a descrição e o vídeo
+            videoWrapper.style.display = 'none';
+            moduleDescriptionElement.style.display = 'none';
+
+
             moduleLinks.forEach(link => {
                 link.addEventListener('click', (event) => {
-                    // Previne que o link (com #) recarregue a página
                     event.preventDefault(); 
                     
-                    // Remove a mensagem de boas-vindas
                     if (welcomeMessage) {
                         welcomeMessage.style.display = 'none';
                     }
 
-                    // Pega os dados que guardámos no HTML
+                    // MOSTRA os elementos do módulo
+                    videoWrapper.style.display = 'block';
+                    moduleDescriptionElement.style.display = 'block';
+
                     const jsonFile = link.dataset.json;
                     const moduleTitle = link.dataset.title;
 
-                    // Chama a função para carregar o conteúdo
+                    // Chama a função ATUALIZADA
                     loadModuleContent(jsonFile, moduleTitle, link);
                 });
             });
 
             /**
-             * Função para carregar o conteúdo do módulo.
+             * Função para carregar o conteúdo do módulo (VERSÃO FINAL).
+             * Ela usa 'fetch' para buscar os ficheiros JSON.
              */
             async function loadModuleContent(jsonFile, title, activeLink) {
                 
-                // Atualiza visualmente o link ativo
                 updateActiveLink(activeLink);
 
-                // Mostra um feedback de carregamento
+                // Feedback de carregamento
                 moduleTitleElement.textContent = `Carregando ${title}...`;
                 moduleDescriptionElement.innerHTML = '<p>A carregar conteúdo...</p>';
-                videoWrapper.style.display = 'none'; // Esconde o vídeo enquanto carrega
+                videoWrapper.style.display = 'none'; // Esconde vídeo enquanto carrega
 
-                // --- SIMULAÇÃO (APENAS PARA TESTAR O LAYOUT) ---
-                // (Podes apagar este bloco 'setTimeout' quando formos usar o 'fetch' real)
-                setTimeout(() => {
-                    moduleTitleElement.textContent = title;
+                // --- IMPLEMENTAÇÃO REAL (Fetch) ---
+                try {
+                    // 1. Busca o ficheiro JSON
+                    const response = await fetch(jsonFile);
                     
-                    // Simula um link de vídeo
-                    // (Trocaremos isto pelo link real do JSON)
-                    // NOTA: O link de vídeo do YouTube deve estar no formato "embed"
-                    videoPlayer.src = "https://www.youtube.com/embed/dQw4w9WgXcQ"; // Placeholder
+                    // 2. Verifica se a busca foi bem-sucedida
+                    if (!response.ok) {
+                        // Erro 404 - Ficheiro não encontrado
+                        if(response.status === 404) {
+                            throw new Error(`Ficheiro ${jsonFile} não encontrado.`);
+                        }
+                        throw new Error(`Erro ao buscar o ficheiro: ${response.statusText}`);
+                    }
+                    
+                    // 3. Converte a resposta em JSON
+                    const data = await response.json();
+
+                    // 4. Atualiza a página com os dados reais do JSON
+                    moduleTitleElement.textContent = title;
+                    videoPlayer.src = data.videoUrl; // Link do vídeo vindo do JSON
                     videoWrapper.style.display = 'block'; // Mostra o vídeo
                     
-                    // Simula uma descrição
-                    moduleDescriptionElement.innerHTML = `
-                        <h3>Sobre o ${title}</h3>
-                        <p>O conteúdo completo deste módulo, carregado a partir de <strong>${jsonFile}</strong>, aparecerá aqui.</p>
-                        <p>Isto é apenas um texto temporário para demonstrar a funcionalidade. Quando nos forneceres os ficheiros JSON e Markdown, o conteúdo real será carregado dinamicamente.</p>
-                    `;
-                }, 500); // Meio segundo de atraso para simular o carregamento
+                    // Conteúdo (do JSON)
+                    moduleDescriptionElement.innerHTML = data.content; 
+
+                } catch (error) {
+                    // Em caso de erro, exibe a mensagem na tela
+                    console.error('Falha ao carregar o módulo:', error);
+                    moduleTitleElement.textContent = "Erro ao carregar";
+                    moduleDescriptionElement.innerHTML = `<p>Não foi possível carregar o conteúdo do módulo.</p>
+                        <p><strong>Erro:</strong> ${error.message}</p>
+                        <p>Por favor, verifique se o ficheiro <strong>${jsonFile}</strong> existe na mesma pasta que o <code>index.html</code>.</p>`;
+                }
             }
 
             /**
              * Função auxiliar para destacar o módulo ativo na barra lateral.
              */
             function updateActiveLink(clickedLink) {
-                // Remove a classe 'active' de todos os links
                 moduleLinks.forEach(link => {
                     link.classList.remove('active');
                 });
-                
-                // Adiciona a classe 'active' apenas ao link que foi clicado
                 clickedLink.classList.add('active');
             }
         });
