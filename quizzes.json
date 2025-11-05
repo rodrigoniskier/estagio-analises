@@ -1,0 +1,1151 @@
+{
+  "modulo1": {
+    "title": "Módulo 1: Controle de Qualidade e Fases Laboratoriais",
+    "questions": [
+      {
+        "text": "Qual fase do processo laboratorial é responsável pela grande maioria (cerca de 60-70%) dos erros?",
+        "options": [
+          "Fase Analítica (a execução do teste)",
+          "Fase Pós-Analítica (a entrega do resultado)",
+          "Fase Pré-Analítica (coleta, identificação, transporte)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A fase pré-analítica é a mais vulnerável a erros humanos e de procedimento, como identificação errada, coleta inadequada ou transporte em temperatura errada."
+      },
+      {
+        "text": "Se um equipamento mede repetidamente um soro controle (valor real = 100 mg/dL) e obtém os resultados 120, 121, 119, 120, podemos dizer que o método é:",
+        "options": [
+          "Preciso, mas Inexato",
+          "Exato, mas Impreciso",
+          "Preciso e Exato",
+          "Impreciso e Inexato"
+        ],
+        "correctAnswer": 0,
+        "explanation": "O método é 'Preciso' (alta repetibilidade, resultados próximos) mas 'Inexato' (longe do alvo/valor verdadeiro)."
+      },
+      {
+        "text": "Qual é a ordem correta de coleta de tubos de sangue a vácuo para evitar contaminação cruzada de aditivos?",
+        "options": [
+          "EDTA (Roxo), Soro (Vermelho), Citrato (Azul)",
+          "Citrato (Azul), Soro (Vermelho), EDTA (Roxo), Fluoreto (Cinza)",
+          "Soro (Vermelho), EDTA (Roxo), Citrato (Azul)",
+          "EDTA (Roxo), Citrato (Azul), Soro (Vermelho)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A ordem correta previne que o anticoagulante de um tubo (como o EDTA) contamine o tubo de soro ou o de citrato (crítico para coagulação)."
+      },
+      {
+        "text": "Uma amostra de sangue que chega ao laboratório com o soro visivelmente avermelhado está sofrendo de:",
+        "options": [
+          "Lipemia",
+          "Hemólise",
+          "Icterícia",
+          "Coagulação"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hemólise é a rutura das hemácias, que liberta a hemoglobina (vermelha) no soro. Lipemia deixa o soro 'leitoso' e Icterícia deixa 'amarelado'."
+      },
+      {
+        "text": "O gráfico de Levey-Jennings é uma ferramenta usada para monitorizar:",
+        "options": [
+          "O número de amostras rejeitadas por dia.",
+          "O Controle de Qualidade Interno (CCI) ao longo do tempo.",
+          "O resultado do Controle de Qualidade Externo (CQE).",
+          "O tempo de jejum dos pacientes."
+        ],
+        "correctAnswer": 1,
+        "explanation": "O gráfico de Levey-Jennings plota os resultados diários do soro controle para verificar se o equipamento está estável (preciso e exato)."
+      },
+      {
+        "text": "A capacidade de um teste detetar a doença quando ela está realmente presente (poucos falsos-negativos) é chamada de:",
+        "options": [
+          "Especificidade",
+          "Sensibilidade",
+          "Precisão",
+          "Exatidão"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sensibilidade mede a proporção de verdadeiros positivos. Um teste muito sensível é bom para triagem."
+      },
+      {
+        "text": "Qual destes é um critério obrigatório para a REJEIÇÃO de uma amostra de sangue?",
+        "options": [
+          "Paciente não estava em jejum para um hemograma.",
+          "Amostra colhida em tubo de EDTA que está coagulado.",
+          "Soro ligeiramente ictérico.",
+          "Volume 10% abaixo do ideal no tubo de soro."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Se o tubo de EDTA (anticoagulante) coagulou, a proporção sangue/aditivo falhou e a amostra é inútil para contagem celular."
+      },
+      {
+        "text": "O transporte de amostras no calor intenso do Nordeste é um desafio crítico da fase:",
+        "options": [
+          "Pré-Analítica",
+          "Analítica",
+          "Pós-Analítica",
+          "De Controlo"
+        ],
+        "correctAnswer": 0,
+        "explanation": "O transporte (logística, temperatura) faz parte da fase pré-analítica, sendo uma das maiores fontes de erro antes da análise."
+      },
+      {
+        "text": "Comunicar um resultado crítico (ex: Potássio > 6.5) por telefone ao médico faz parte de qual fase?",
+        "options": [
+          "Fase Analítica",
+          "Fase Pós-Analítica",
+          "Fase Pré-Analítica",
+          "Fase de Calibração"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A fase pós-analítica inclui tudo após a execução do teste: validação, formatação do laudo e a comunicação correta do resultado."
+      },
+      {
+        "text": "A capacidade de um teste excluir a doença em quem é saudável (poucos falsos-positivos) é chamada de:",
+        "options": [
+          "Sensibilidade",
+          "Especificidade",
+          "Exatidão",
+          "Repetibilidade"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Especificidade mede a proporção de verdadeiros negativos. Um teste muito específico é bom para confirmação."
+      }
+    ]
+  },
+  "modulo2": {
+    "title": "Módulo 2: Hematologia",
+    "questions": [
+      {
+        "text": "Qual é o anticoagulante de escolha (tubo de tampa roxa) para a realização de um hemograma completo?",
+        "options": [
+          "EDTA (Ácido Etilenodiamino Tetra-acético)",
+          "Citrato de Sódio (Tubo Azul)",
+          "Heparina (Tubo Verde)",
+          "Fluoreto de Sódio (Tubo Cinza)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "O EDTA quela o cálcio e é o anticoagulante que melhor preserva a morfologia das células sanguíneas (hemácias, leucócitos e plaquetas)."
+      },
+      {
+        "text": "Um VCM (Volume Corpuscular Médio) abaixo de 80 fL classifica a anemia como:",
+        "options": [
+          "Normocítica",
+          "Macrocítica",
+          "Microcítica",
+          "Hipocrómica"
+        ],
+        "correctAnswer": 2,
+        "explanation": "VCM mede o tamanho médio da hemácia. Abaixo de 80 fL (fentolitros) indica microcitose (hemácias pequenas), comum na anemia ferropriva."
+      },
+      {
+        "text": "Um RDW (Red Cell Distribution Width) elevado indica:",
+        "options": [
+          "Que as hemácias têm pouca cor (hipocromia).",
+          "Que a medula óssea está a produzir poucas células.",
+          "Que há uma grande variação no tamanho das hemácias (anisocitose).",
+          "Que as hemácias são todas do mesmo tamanho (homogéneas)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "RDW mede a heterogeneidade no tamanho das hemácias (anisocitose). Um RDW alto é clássico da anemia ferropriva."
+      },
+      {
+        "text": "Num paciente com Dengue Hemorrágica, quais são os dois achados mais críticos e esperados no hemograma?",
+        "options": [
+          "Aumento de Leucócitos (Leucocitose) e Aumento de Plaquetas (Trombocitose).",
+          "Queda de Leucócitos (Leucopenia) e Queda de Plaquetas (Trombocitopenia).",
+          "Aumento de Eosinófilos (Eosinofilia) e Anemia.",
+          "Queda de Hemoglobina e Aumento de VCM (Macrocitose)."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Dengue clássica cursa com Leucopenia. Na forma grave (hemorrágica), a Trombocitopenia (plaquetas < 100.000) é o sinal de alarme mais importante."
+      },
+      {
+        "text": "Um paciente no Nordeste apresenta anemia e uma contagem de Eosinófilos muito elevada (Eosinofilia). Qual deve ser a principal suspeita diagnóstica?",
+        "options": [
+          "Infeção Viral (ex: Dengue)",
+          "Infeção Bacteriana Grave",
+          "Parasitose Intestinal (ex: Ancilostoma, Ascaris)",
+          "Anemia Falciforme"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Eosinofilia é a resposta imune clássica a parasitas (helmintos), muito prevalentes na nossa região e causas comuns de anemia."
+      },
+      {
+        "text": "O Teste de Falcização, que usa metabissulfito de sódio para induzir a forma de 'foice', é usado para triagem de qual doença?",
+        "options": [
+          "Leishmaniose",
+          "Talassemia",
+          "Anemia Ferropriva",
+          "Anemia Falciforme (Hemoglobina S)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "O metabissulfito de sódio cria um ambiente de baixa oxigenação (hipóxia) que força a polimerização da Hemoglobina S, revelando a forma de foice (drepanócito)."
+      },
+      {
+        "text": "Um VCM (Volume Corpuscular Médio) acima de 100 fL classifica a anemia como:",
+        "options": [
+          "Microcítica",
+          "Macrocítica",
+          "Normocítica",
+          "Hipercrómica"
+        ],
+        "correctAnswer": 1,
+        "explanation": "VCM > 100 fL indica macrocitose (hemácias grandes), comum na deficiência de Vitamina B12 ou Folato."
+      },
+      {
+        "text": "Na contagem diferencial manual (microscopia), qual célula é caracterizada por um núcleo bilobado e grandes grânulos vermelhos/laranja?",
+        "options": [
+          "Neutrófilo",
+          "Linfócito",
+          "Basófilo",
+          "Eosinófilo"
+        ],
+        "correctAnswer": 3,
+        "explanation": "O Eosinófilo é facilmente identificado pelos seus grandes grânulos acidofílicos (que se coram com eosina, cor-de-rosa/vermelho)."
+      },
+      {
+        "text": "A presença de hemácias em forma de alvo (Codócitos) no esfregaço sanguíneo é sugestiva de:",
+        "options": [
+          "Anemia Ferropriva",
+          "Talassemia ou Doença Hepática",
+          "Anemia por deficiência de B12",
+          "Infeção por Dengue"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Os Codócitos (hemácias alvo) aparecem quando há um excesso de membrana em relação ao volume, comum nas Talassemias e em doenças do fígado."
+      },
+      {
+        "text": "A contagem de Reticulócitos (hemácias jovens) é usada para avaliar:",
+        "options": [
+          "A capacidade da medula óssea de responder à anemia.",
+          "O nível de oxigenação do sangue.",
+          "A presença de uma infeção bacteriana.",
+          "O risco de trombose."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Se a contagem de reticulócitos está alta numa anemia, significa que a medula óssea está a funcionar bem (regenerativa). Se está baixa, a medula falhou."
+      }
+    ]
+  },
+  "modulo3": {
+    "title": "Módulo 3: Bioquímica Clínica",
+    "questions": [
+      {
+        "text": "Qual é o principal interferente laboratorial que causa um aumento FALSO do Potássio (K+)?",
+        "options": [
+          "Hemólise",
+          "Lipemia",
+          "Icterícia",
+          "Jejum prolongado"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A Hemólise (rutura das hemácias) liberta o potássio intracelular (que é muito concentrado) no soro, causando uma hipercalemia (K+ alto) falsa e perigosa."
+      },
+      {
+        "text": "Uma amostra de soro com aspeto 'leitoso' ou 'turvo' é chamada de:",
+        "options": [
+          "Hemolisada",
+          "Ictérica",
+          "Lipémica",
+          "Coagulada"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Lipemia é causada pelo excesso de triglicerídeos, geralmente por o paciente não ter cumprido o jejum, e interfere na leitura ótica (fotometria) da maioria dos testes."
+      },
+      {
+        "text": "Para a dosagem de Glicose, o tubo de eleição (tampa cinza) contém qual anticoagulante/inibidor?",
+        "options": [
+          "EDTA",
+          "Citrato de Sódio",
+          "Fluoreto de Sódio",
+          "Heparina"
+        ],
+        "correctAnswer": 2,
+        "explanation": "O Fluoreto de Sódio é um inibidor da via glicolítica, impedindo que as células do sangue 'consumam' a glicose da amostra enquanto ela espera pela análise."
+      },
+      {
+        "text": "Qual exame reflete a média da glicemia dos últimos 90-120 dias?",
+        "options": [
+          "Glicemia de Jejum",
+          "Curva Glicémica (TOTG)",
+          "Hemoglobina Glicada (HbA1c)",
+          "Frutossamina"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Hemoglobina Glicada (HbA1c) mede a percentagem de hemoglobina que se ligou à glicose. Como a hemácia vive 90-120 dias, ela reflete a média glicémica desse período."
+      },
+      {
+        "text": "Num perfil hepático, um aumento muito maior de AST (TGO) em relação à ALT (TGP) (ex: AST/ALT > 2.0) é fortemente sugestivo de:",
+        "options": [
+          "Hepatite Viral Aguda",
+          "Lesão por Gordura no Fígado (Esteatose)",
+          "Hepatopatia Alcoólica ou Cirrose",
+          "Obstrução Biliar (Colestase)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Enquanto a hepatite viral geralmente eleva mais a ALT, a lesão alcoólica clássica eleva mais a AST (TGO), muitas vezes numa proporção de 2:1 ou maior."
+      },
+      {
+        "text": "Qual é o marcador de função renal (filtração) mais fiável e hoje recomendado, por levar em conta a creatinina, idade e sexo?",
+        "options": [
+          "Ureia",
+          "Creatinina isolada",
+          "Taxa de Filtração Glomerular (TFG) estimada",
+          "Ácido Úrico"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A TFG estimada (calculada por fórmulas como CKD-EPI) é muito superior à creatinina isolada, pois corrige a variação da massa muscular."
+      },
+      {
+        "text": "A fórmula de Friedewald [LDL = Colesterol Total - HDL - (Triglicerídeos / 5)] NÃO PODE ser usada se:",
+        "options": [
+          "O Colesterol Total for > 200 mg/dL",
+          "O HDL for < 40 mg/dL",
+          "Os Triglicerídeos forem > 400 mg/dL",
+          "O paciente for diabético"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A fórmula assume que VLDL = TG/5, o que se torna incorreto quando os triglicerídeos estão muito altos (amostra lipémica), invalidando o cálculo do LDL."
+      },
+      {
+        "text": "Qual é o marcador cardíaco considerado Padrão-Ouro para o diagnóstico de Infarto Agudo do Miocárdio, por ser o mais específico?",
+        "options": [
+          "CK-MB",
+          "Mioglobina",
+          "Troponina (I ou T)",
+          "AST (TGO)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Troponina é uma proteína estrutural exclusiva do músculo cardíaco. A sua elevação no sangue indica necrose (morte) do miocárdio, sendo o marcador mais específico."
+      },
+      {
+        "text": "Qual é o princípio técnico da maioria dos testes bioquímicos (Glicose, Colesterol, etc.) nos analisadores automáticos?",
+        "options": [
+          "Eletroquímica (ISE)",
+          "Imunofluorescência (RIFI)",
+          "Espectrofotometria (Colorimetria)",
+          "Eletroforese"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A maioria dos testes usa reações enzimáticas que produzem cor. O equipamento mede a intensidade da cor (Absorbância) por espectrofotometria."
+      },
+      {
+        "text": "Um paciente diabético apresenta Glicose = 450 mg/dL na fita de urina e também Corpos Cetónicos = 3+. Qual é a suspeita diagnóstica imediata?",
+        "options": [
+          "Controlo glicémico perfeito",
+          "Cetoacidose Diabética",
+          "Insuficiência Renal",
+          "Infeção Urinária"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Glicose alta + Cetonas na urina é a combinação clássica da Cetoacidose Diabética, uma emergência médica que ocorre quando o corpo queima gordura por falta de insulina."
+      }
+    ]
+  },
+  "modulo4": {
+    "title": "Módulo 4: Urinálise",
+    "questions": [
+      {
+        "text": "Uma amostra de urina para EAS (Urinálise) deve ser processada em até quanto tempo, se mantida em temperatura ambiente?",
+        "options": [
+          "12 horas",
+          "8 horas",
+          "24 horas",
+          "2 horas"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Após 2 horas, as bactérias proliferam, o pH altera-se e os cilindros degradam-se. Se não for possível, deve ser refrigerada (2-8°C)."
+      },
+      {
+        "text": "Numa fita reagente de urina (exame químico), a presença de Nitrito Positivo é um forte indicador de:",
+        "options": [
+          "Lesão Renal (Nefropatia)",
+          "Diabetes descontrolada",
+          "Infeção do Trato Urinário (ITU) por bactérias Gram-negativas",
+          "Problemas no Fígado (Hepatite)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Muitas bactérias Gram-negativas (como E. coli) convertem o Nitrato (normal) da dieta em Nitrito, que é detetado pela fita."
+      },
+      {
+        "text": "A presença de \"Cilindros Hemáticos\" (hemácias dentro de um cilindro) no sedimento urinário indica que o sangramento está a ocorrer ONDE?",
+        "options": [
+          "Na bexiga (Cistite)",
+          "Na uretra (Uretrite)",
+          "Dentro do Rim (Glomerulonefrite)",
+          "Contaminação menstrual"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Cilindros são moldes dos túbulos renais. Se há hemácias DENTRO do molde, significa que o sangramento ocorreu no Rins (ex: Glomerulonefrite)."
+      },
+      {
+        "text": "Um paciente diabético apresenta Glicose 3+ e Cetonas 3+ na fita de urina. Qual é a emergência médica suspeita?",
+        "options": [
+          "Infeção Urinária",
+          "Cálculo Renal",
+          "Cetoacidose Diabética",
+          "Insuficiência Hepática"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A presença simultânea de glicose (hiperglicemia) e cetonas (queima de gordura por falta de insulina) na urina é o sinal clássico de Cetoacidose Diabética."
+      },
+      {
+        "text": "Qual achado na fita de urina é o primeiro sinal de Nefropatia Diabética (lesão renal pela diabetes)?",
+        "options": [
+          "Nitrito",
+          "Proteína (Albuminúria)",
+          "Leucocitase",
+          "Bilirrubina"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O aumento da permeabilidade dos glomérulos faz com que a albumina (proteína) 'vaze' para a urina. A microalbuminúria é o primeiro sinal."
+      },
+      {
+        "text": "A presença de cilindros \"Céreos\" (com aparência de cera, densos) no sedimento urinário é um achado que indica:",
+        "options": [
+          "Uma infeção urinária leve.",
+          "Insuficiência Renal Avançada / Doença Renal Crónica.",
+          "O paciente está desidratado.",
+          "Um achado normal em atletas."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Cilindros céreos indicam estase urinária prolongada nos túbulos, sendo um sinal de doença renal crónica grave e de mau prognóstico."
+      },
+      {
+        "text": "No exame físico da urina, uma cor castanho-escura (tipo \"Coca-Cola\") é mais sugestiva de:",
+        "options": [
+          "Urina muito diluída.",
+          "Presença de Bilirrubina (Problema hepático).",
+          "Infeção por E. coli.",
+          "Uso de medicação para dor (Fenazopiridina)."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A bilirrubina conjugada, quando em excesso (colestase, hepatite), é excretada na urina, conferindo-lhe uma cor escura, tipo 'Coca-Cola' ou 'chá-mate'."
+      },
+      {
+        "text": "O método de medição da Densidade Urinária (Peso Específico) que usa um prisma ótico para medir o desvio da luz é chamado de:",
+        "options": [
+          "Urinometria (Hidrómetro)",
+          "Refratometria",
+          "Fita Reagente",
+          "Osmometria"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O Refratómetro é o aparelho que mede a densidade através do índice de refração da luz na amostra de urina."
+      },
+      {
+        "text": "A presença de grande quantidade de Células Epiteliais Escamosas no sedimento urinário de uma mulher geralmente indica:",
+        "options": [
+          "Lesão renal grave.",
+          "Infeção por HPV.",
+          "Contaminação da amostra (coleta mal feita).",
+          "Cálculo renal."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Células escamosas vêm da uretra distal e da pele. A sua presença em grande número invalida a amostra para urocultura, pois indica contaminação externa."
+      },
+      {
+        "text": "Em zonas endémicas do Nordeste, a presença de hematúria (sangue) pode estar associada à visualização de qual parasita no sedimento urinário?",
+        "options": [
+          "Giardia lamblia",
+          "Ascaris lumbricoides",
+          "Leishmania",
+          "Ovos de Schistosoma haematobium"
+        ],
+        "correctAnswer": 3,
+        "explanation": "A Esquistossomose urinária (Schistosoma haematobium) causa lesões na bexiga, levando a hematúria, e os seus ovos (com espícula terminal) podem ser vistos no sedimento."
+      }
+    ]
+  },
+  "modulo5": {
+    "title": "Módulo 5: Parasitologia",
+    "questions": [
+      {
+        "text": "Qual método de exame de fezes é quantitativo (calcula Ovos Por Grama - OPG) e é o método de escolha da OMS para Esquistossomose?",
+        "options": [
+          "Hoffman, Pons & Janer (Sedimentação Espontânea)",
+          "Kato-Katz",
+          "Exame Direto a Fresco",
+          "Ritchie (Centrífugo-flutuação)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O método de Kato-Katz usa um 'templet' (molde) padronizado para quantificar o número de ovos por grama de fezes, sendo essencial para o controlo da esquistossomose."
+      },
+      {
+        "text": "Na suspeita de Malária, qual técnica de microscopia oferece a MAIOR SENSIBILIDADE (deteta baixas parasitemias)?",
+        "options": [
+          "Lâmina Delgada (Esfregaço Fino)",
+          "Lâmina Espessa (Gota Espessa)",
+          "Kato-Katz",
+          "Exame Direto a Fresco"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Gota Espessa concentra uma maior quantidade de sangue numa área pequena, aumentando a sensibilidade. A Lâmina Delgada é usada depois para identificar a espécie (ex: P. falciparum vs P. vivax)."
+      },
+      {
+        "text": "A Leishmaniose Visceral (Calazar), muito prevalente no Nordeste, tem como Padrão-Ouro para diagnóstico direto (visualização do parasita):",
+        "options": [
+          "Exame de fezes (Kato-Katz)",
+          "Análise do LCR (Líquor)",
+          "Biópsia de medula óssea (procura de amastigotas)",
+          "Esfregaço de sangue periférico (Gota Espessa)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "O parasita (na forma de amastigota) infeta os macrófagos e acumula-se na medula óssea e no baço. A biópsia de medula óssea é o método confirmatório."
+      },
+      {
+        "text": "Qual parasita intestinal, comum no Nordeste, é a principal causa de anemia ferropriva (por perda de sangue) e Eosinofilia?",
+        "options": [
+          "Ascaris lumbricoides (Lombriga)",
+          "Giardia lamblia",
+          "Ancylostoma duodenale / Necator americanus (Amarelão)",
+          "Entamoeba histolytica"
+        ],
+        "correctAnswer": 2,
+        "explanation": "O Ancilostoma ('Amarelão') fixa-se na mucosa intestinal com os seus 'dentes' e alimenta-se de sangue, causando anemia crónica e eosinofilia."
+      },
+      {
+        "text": "O método de Hoffman, Pons & Janer (sedimentação espontânea em água) é particularmente bom para detetar:",
+        "options": [
+          "Ovos de Schistosoma mansoni",
+          "Larvas de Strongyloides stercoralis e cistos de Protozoários (Giardia, Ameba)",
+          "Trofozoítas de Malária",
+          "Ovos de Enterobius vermicularis (Oxiúro)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A sedimentação em água (método de Hoffman) é uma técnica simples e eficaz para concentrar a maioria dos cistos de protozoários e larvas de helmintos."
+      },
+      {
+        "text": "Para diagnosticar o *Enterobius vermicularis* (Oxiúro), qual é o método de coleta de eleição?",
+        "options": [
+          "Kato-Katz",
+          "Exame de fezes normal (Hoffman)",
+          "Método da Fita Adesiva (Graham)",
+          "Exame de urina"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A fêmea do Oxiúro migra à noite para a região perianal para pôr os ovos. O método de Graham (fita adesiva na região) é o mais eficaz para os capturar."
+      },
+      {
+        "text": "No diagnóstico de Malária, qual coloração é usada para corar as lâminas (delgada e espessa)?",
+        "options": [
+          "Gram",
+          "Ziehl-Neelsen",
+          "Papanicolau",
+          "Wright-Giemsa"
+        ],
+        "correctAnswer": 3,
+        "explanation": "A coloração de Wright-Giemsa é o padrão para hematologia e parasitologia sanguínea, corando os núcleos dos parasitas (azul/roxo) e o citoplasma."
+      },
+      {
+        "text": "A presença de trofozoítas móveis, piriformes (forma de pera) e com 4 flagelos no exame a fresco de fezes diarreicas é diagnóstico de:",
+        "options": [
+          "Giardia lamblia",
+          "Entamoeba histolytica",
+          "Ascaris lumbricoides",
+          "Trichomonas vaginalis"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A Giardia é um protozoário flagelado. O exame a fresco é ideal para ver o seu movimento 'errático' característico em amostras diarreicas."
+      },
+      {
+        "text": "Qual parasita é diagnosticado pela visualização de ovos com uma espícula lateral característica nas fezes (Método Kato-Katz)?",
+        "options": [
+          "Schistosoma haematobium (Urinário)",
+          "Schistosoma mansoni (Intestinal)",
+          "Necator americanus",
+          "Trichuris trichiura"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O Schistosoma mansoni (causador da Esquistossomose intestinal/hepática) possui um ovo muito característico com uma espícula lateral."
+      },
+      {
+        "text": "Um paciente com febre prolongada, aumento massivo do fígado e baço (hepatoesplenomegalia) e pancitopenia (anemia, leucopenia, plaquetopenia) é o quadro clássico de qual doença prevalente no Nordeste?",
+        "options": [
+          "Malária por P. falciparum",
+          "Leishmaniose Visceral (Calazar)",
+          "Esquistossomose aguda",
+          "Amebíase extra-intestinal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Leishmaniose Visceral (Calazar) é caracterizada pela tríade de febre, hepatoesplenomegalia e pancitopenia, sendo uma emergência médica na região."
+      }
+    ]
+  },
+  "modulo6": {
+    "title": "Módulo 6: Imunologia e Sorologia",
+    "questions": [
+      {
+        "text": "Numa infeção aguda (primária), qual é o primeiro anticorpo (Imunoglobulina) a aparecer no sangue, indicando fase aguda?",
+        "options": [
+          "IgG",
+          "IgM",
+          "IgA",
+          "IgE"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O IgM é o anticorpo de 'ataque rápido' e de fase aguda. O IgG é o anticorpo de 'memória' e aparece mais tarde."
+      },
+      {
+        "text": "Um paciente apresenta resultado 'IgM Negativo' e 'IgG Positivo' para Toxoplasmose. Qual é a interpretação?",
+        "options": [
+          "Infeção aguda/recente.",
+          "Infeção passada ou vacinação (Imune).",
+          "Suscetível (nunca teve contacto).",
+          "Falso-positivo."
+        ],
+        "correctAnswer": 1,
+        "explanation": "IgM negativo (sem fase aguda) e IgG positivo (memória) indica que o paciente já teve contacto prévio com o agente e está imunizado."
+      },
+      {
+        "text": "Qual é a diferença fundamental entre um teste Treponémico (ex: Teste Rápido, TPHA) e um Não-Treponémico (ex: VDRL) para Sífilis?",
+        "options": [
+          "O VDRL é mais específico que o Teste Rápido.",
+          "O VDRL deteta o antígeno; o Teste Rápido deteta o anticorpo.",
+          "O VDRL deteta anticorpos inespecíficos (reaginas) e negativa com o tratamento; o Teste Rápido deteta anticorpos específicos e permanece positivo para a vida (cicatriz).",
+          "O VDRL só pode ser feito no sangue; o Teste Rápido só no líquor."
+        ],
+        "correctAnswer": 2,
+        "explanation": "O VDRL (Não-Treponémico) é usado para controlo de cura, pois seus títulos caem. O Teste Treponémico (específico) é usado para diagnóstico e confirmação, pois fica positivo mesmo após a cura."
+      },
+      {
+        "text": "Num paciente com suspeita de Dengue há 3 dias (fase febril inicial), qual é o marcador laboratorial mais indicado para detecção precoce?",
+        "options": [
+          "Antígeno NS1",
+          "Anticorpo IgM",
+          "Anticorpo IgG",
+          "Contagem de Plaquetas"
+        ],
+        "correctAnswer": 0,
+        "explanation": "O Antígeno NS1 é uma proteína do próprio vírus da Dengue que circula em alta quantidade nos primeiros 5 dias. O IgM só começa a aparecer a partir do 5º dia."
+      },
+      {
+        "text": "O método de ELISA (Ensaio Imunoenzimático) utiliza uma enzima ligada a um anticorpo para produzir o quê?",
+        "options": [
+          "Luz (Quimioluminescência)",
+          "Mudança de Cor (Colorimetria)",
+          "Aglutinação de hemácias",
+          "Fluorescência"
+        ],
+        "correctAnswer": 1,
+        "explanation": "No ELISA, a enzima (ex: Peroxidase) reage com um substrato para gerar um produto colorido, que é lido por um espectrofotómetro."
+      },
+      {
+        "text": "Qual é o marcador de infeção ATIVA (crónica ou aguda) da Hepatite B?",
+        "options": [
+          "Anti-HBs Positivo",
+          "HBsAg Positivo",
+          "Anti-HBc IgG Positivo (isolado)",
+          "Anti-HBe Positivo"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O HBsAg (Antigénio de Superfície da Hepatite B) é a proteína do próprio vírus. Se está presente, o vírus está presente e a infeção está ativa."
+      },
+      {
+        "text": "Um paciente foi vacinado contra Hepatite B e respondeu bem à vacina. Qual é o padrão sorológico esperado?",
+        "options": [
+          "HBsAg Positivo",
+          "Anti-HBc Total Positivo",
+          "Anti-HBs Positivo (isolado)",
+          "Tudo negativo"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A vacina induz apenas a produção do anticorpo de superfície (Anti-HBs). O Anti-HBc (do 'core') só aparece em infeção natural."
+      },
+      {
+        "text": "O método de Quimioluminescência (CLIA), usado em grandes analisadores automáticos, é uma evolução do ELISA que deteta:",
+        "options": [
+          "Luz",
+          "Cor",
+          "Radioatividade",
+          "Aglutinação"
+        ],
+        "correctAnswer": 0,
+        "explanation": "O CLIA usa reações que emitem fotões (luz) em vez de cor, o que o torna milhares de vezes mais sensível que o ELISA tradicional."
+      },
+      {
+        "text": "No algoritmo de diagnóstico do HIV, os testes de 4ª Geração (usados hoje) são mais rápidos porque detetam simultaneamente:",
+        "options": [
+          "IgM e IgG",
+          "Anticorpo (IgM/IgG) e o Antígeno p24",
+          "DNA e RNA viral",
+          "Anticorpo e Carga Viral"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ao detetar o Antígeno p24 (uma proteína do próprio vírus), os testes de 4ª geração encurtam a 'janela imunológica', diagnosticando antes mesmo de o corpo produzir anticorpos."
+      },
+      {
+        "text": "O método de RIFI (Imunofluorescência Indireta) é lido como?",
+        "options": [
+          "Mudança de cor numa placa de ELISA.",
+          "Uma linha colorida num teste rápido.",
+          "Observação de fluorescência (brilho) num microscópio UV.",
+          "Aglutinação de partículas de carbono (VDRL)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Na RIFI, um anticorpo marcado com um fluoróforo (ex: FITC) liga-se ao alvo e brilha (verde) quando excitado por luz UV no microscópio."
+      }
+    ]
+  },
+  "modulo7": {
+    "title": "Módulo 7: Diagnóstico Molecular",
+    "questions": [
+      {
+        "text": "O PCR (Reação em Cadeia da Polimerase) é uma técnica que serve para:",
+        "options": [
+          "Detetar anticorpos (IgM/IgG)",
+          "Medir a glicose no sangue",
+          "Amplificar (criar biliões de cópias) de um alvo de DNA",
+          "Cultivar bactérias em laboratório"
+        ],
+        "correctAnswer": 2,
+        "explanation": "O PCR é uma 'fotocopiadora' molecular que amplifica exponencialmente uma sequência específica de DNA."
+      },
+      {
+        "text": "Quais são os 3 passos (mudanças de temperatura) de um ciclo de PCR, pela ordem correta?",
+        "options": [
+          "Anelamento (55°C), Extensão (72°C), Denaturação (95°C)",
+          "Extensão (72°C), Denaturação (95°C), Anelamento (55°C)",
+          "Denaturação (95°C), Anelamento (55°C), Extensão (72°C)",
+          "Denaturação (95°C), Extensão (72°C), Anelamento (55°C)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "O ciclo é sempre: 1. Denaturar (separar as fitas a 95°C), 2. Anelar (ligar os primers a 55-65°C), 3. Estender (copiar a fita a 72°C)."
+      },
+      {
+        "text": "Para diagnosticar vírus de RNA (como COVID-19, Dengue, HIV), o PCR precisa de um passo inicial chamado:",
+        "options": [
+          "Eletroforese",
+          "Transcriptase Reversa (RT)",
+          "Hibridização",
+          "Extração por Fenol"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O PCR só funciona com DNA. A Transcriptase Reversa (RT) é a enzima que primeiro 'traduz' o RNA viral para um DNA complementar (cDNA), que pode então ser amplificado."
+      },
+      {
+        "text": "No qPCR (PCR em Tempo Real), o resultado é dado como 'Ct' (Cycle Threshold). Um Ct BAIXO (ex: Ct 20) significa:",
+        "options": [
+          "Carga viral BAIXA (pouco alvo inicial)",
+          "Carga viral ALTA (muito alvo inicial)",
+          "Teste Negativo",
+          "Teste Inválido"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O Ct é o número de ciclos que a máquina levou para detetar o alvo. Se detetou rápido (Ct 20), é porque havia muito alvo no início (carga viral alta)."
+      },
+      {
+        "text": "No qPCR (PCR em Tempo Real), um Ct ALTO (ex: Ct 38) significa:",
+        "options": [
+          "Carga viral BAIXA (pouco alvo inicial)",
+          "Carga viral ALTA (muito alvo inicial)",
+          "Teste Inválido",
+          "A amostra estava hemolisada"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Se a máquina levou muitos ciclos (Ct 38) para detetar o sinal, é porque havia muito pouco alvo no início (carga viral baixa)."
+      },
+      {
+        "text": "Qual é a enzima \"construtora\" do PCR, famosa por resistir a altas temperaturas (95°C)?",
+        "options": [
+          "Transcriptase Reversa",
+          "DNA Ligase",
+          "Taq Polimerase",
+          "Helicase"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Taq Polimerase (da bactéria Thermus aquaticus) é termorresistente, o que lhe permite sobreviver ao passo de denaturação (95°C) e estar pronta para a extensão."
+      },
+      {
+        "text": "O método moderno de extração de ácidos nucleicos (DNA/RNA) usado na maioria dos kits comerciais utiliza colunas com membranas de:",
+        "options": [
+          "Sílica-Gel",
+          "Fenol-Clorofórmio",
+          "Citrato de Sódio",
+          "Agarose"
+        ],
+        "correctAnswer": 0,
+        "explanation": "O DNA/RNA liga-se à membrana de sílica em condições de alto sal/álcool, permitindo a lavagem dos contaminantes. Depois é eluí-do com água."
+      },
+      {
+        "text": "Após um PCR convencional (não em tempo real), como é que o resultado é visualizado?",
+        "options": [
+          "Num microscópio de fluorescência.",
+          "Numa fita de urina.",
+          "Numa Eletroforese em Gel de Agarose.",
+          "Pela mudança de cor num tubo."
+        ],
+        "correctAnswer": 2,
+        "explanation": "O produto amplificado (amplicons) é corrido num gel de agarose. A presença de uma banda do tamanho esperado confirma o resultado positivo."
+      },
+      {
+        "text": "Num teste de RT-qPCR para COVID-19, o que significa se os genes virais (N, ORF1ab) dão \"Não Detetado\", mas o controlo interno (RNase P) também dá \"Não Detetado\"?",
+        "options": [
+          "Resultado Positivo (carga viral alta).",
+          "Resultado Negativo (paciente saudável).",
+          "Resultado Inválido (falha na coleta ou extração).",
+          "Resultado Indeterminado (carga viral baixa)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "O controlo interno (RNase P) é um gene humano que DEVE positivar. Se ele falha, significa que a coleta foi mal feita (sem células) ou a extração de RNA falhou. A amostra é inválida."
+      },
+      {
+        "text": "Qual a diferença entre DNA e RNA?",
+        "options": [
+          "O DNA é fita simples e o RNA é fita dupla.",
+          "O DNA usa a base Uracila (U) e o RNA usa a Timina (T).",
+          "O DNA usa a desoxirribose e a Timina (T); o RNA usa a ribose e a Uracila (U).",
+          "O DNA é encontrado em vírus e o RNA em humanos."
+        ],
+        "correctAnswer": 2,
+        "explanation": "As duas principais diferenças são o açúcar (Desoxirribose no DNA, Ribose no RNA) e a base (Timina no DNA, Uracila no RNA)."
+      }
+    ]
+  },
+  "modulo8": {
+    "title": "Módulo 8: Tópicos Especiais",
+    "questions": [
+      {
+        "text": "Na tipagem sanguínea (Sistema ABO), a \"Prova Direta\" testa o quê?",
+        "options": [
+          "Os Antigénios (A, B) na superfície das Hemácias do paciente.",
+          "Os Anticorpos (Anti-A, Anti-B) no Soro do paciente.",
+          "A presença do Fator Rh.",
+          "A compatibilidade entre doador e recetor."
+        ],
+        "correctAnswer": 0,
+        "explanation": "A Prova Direta usa soro comercial (Anti-A, Anti-B) para testar as hemácias do paciente. A Prova Reversa testa o soro do paciente."
+      },
+      {
+        "text": "A Doença Hemolítica Perinatal (Eritroblastose Fetal) é um risco grave quando a mãe é:",
+        "options": [
+          "Rh Positivo (Rh+) e o feto é Rh Negativo (Rh-)",
+          "Rh Negativo (Rh-) e o feto é Rh Positivo (Rh+)",
+          "Grupo O e o feto é Grupo A",
+          "Grupo AB e o feto é Grupo O"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ocorre quando a mãe Rh- é sensibilizada (produz anticorpos Anti-D) por um primeiro feto Rh+, e esses anticorpos atacam um segundo feto Rh+."
+      },
+      {
+        "text": "A Prova Cruzada Maior, obrigatória antes de uma transfusão, testa:",
+        "options": [
+          "Hemácias do Doador vs. Soro do Recetor",
+          "Soro do Doador vs. Hemácias do Recetor",
+          "Soro do Doador vs. Soro do Recetor",
+          "Hemácias do Doador vs. Hemácias do Recetor"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Testamos se o soro do recetor (que contém os anticorpos) vai atacar as hemácias do doador (o que será transfundido). Aglutinação = Incompatível."
+      },
+      {
+        "text": "Qual hemocomponente deve ser armazenado em Temperatura Ambiente (20-24°C) e sob agitação constante?",
+        "options": [
+          "Concentrado de Hemácias",
+          "Plasma Fresco Congelado",
+          "Concentrado de Plaquetas",
+          "Crioprecipitado"
+        ],
+        "correctAnswer": 2,
+        "explanation": "As Plaquetas não podem ser refrigeradas, pois o frio ativa-as e destrói a sua função. Devem ser mantidas em agitação para evitar agregação."
+      },
+      {
+        "text": "O Agar MacConkey é um meio de cultura usado em microbiologia que é:",
+        "options": [
+          "Seletivo para Fungos (pH baixo).",
+          "Seletivo para Gram-positivos (ex: Staphylococcus).",
+          "Seletivo (para Gram-negativos) e Diferencial (fermentação de lactose).",
+          "De enriquecimento (cresce tudo, ex: Agar Sangue)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "É seletivo (sais biliares inibem Gram+) e diferencial (E. coli fermenta lactose e fica rosa; Salmonella não fermenta e fica incolor)."
+      },
+      {
+        "text": "No antibiograma (Método Kirby-Bauer), como é determinada a sensibilidade de uma bactéria a um antibiótico?",
+        "options": [
+          "Pela mudança de cor do ágar.",
+          "Medindo o diâmetro do halo de inibição à volta do disco.",
+          "Contando o número de colónias na placa.",
+          "Pela formação de gás no tubo."
+        ],
+        "correctAnswer": 1,
+        "explanation": "O antibiótico difunde-se do disco. Um halo grande significa que a bactéria é sensível; um halo pequeno (ou inexistente) significa que é resistente."
+      },
+      {
+        "text": "No exame de Papanicolau (Citologia Cervical), qual é o passo mais crítico da coleta para evitar um resultado 'Inadequado'?",
+        "options": [
+          "Usar lubrificante no espéculo.",
+          "A coleta durante o período menstrual.",
+          "A fixação imediata (álcool 95% ou spray) da lâmina.",
+          "Colher apenas da parte externa do colo (ectocérvice)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A fixação deve ser imediata. Se a amostra secar ao ar (dessecação), as células retraem, os núcleos borram e o diagnóstico torna-se impossível."
+      },
+      {
+        "text": "No Sistema de Bethesda para resultados de Papanicolau, qual sigla representa uma Lesão de Alto Grau (pré-cancro)?",
+        "options": [
+          "NILM (Negativo)",
+          "ASC-US (Atipia Indeterminada)",
+          "LSIL (Lesão de Baixo Grau)",
+          "HSIL (Lesão de Alto Grau)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "HSIL (High-Grade Squamous Intraepithelial Lesion) representa NIC 2 ou NIC 3, lesões pré-cancerígenas que exigem colposcopia urgente."
+      },
+      {
+        "text": "A presença de 'Coilócitos' (células com grande halo claro perinuclear) na citologia cervical é um sinal clássico de infeção por:",
+        "options": [
+          "Candida albicans",
+          "HPV (Papilomavírus Humano)",
+          "Trichomonas vaginalis",
+          "Gardnerella vaginalis"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O coilócito é a célula patognomónica da infeção por HPV, que causa a lesão (LSIL)."
+      },
+      {
+        "text": "O método E-Test (fita com gradiente) é uma alternativa ao Kirby-Bauer que fornece um resultado quantitativo chamado:",
+        "options": [
+          "Diâmetro do Halo",
+          "MIC (Concentração Inibitória Mínima)",
+          "UFC (Unidades Formadoras de Colónia)",
+          "Título de Anticorpos"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O E-Test mostra o ponto exato (em µg/mL) onde o antibiótico inibiu o crescimento, que é a definição de MIC."
+      }
+    ]
+  },
+  "modulo9": {
+    "title": "Módulo 9: Integração Clínica",
+    "questions": [
+      {
+        "text": "Paciente apresenta: Hb Baixa, VCM Baixo (< 80 fL) e Ferritina Baixa (< 15 µg/L). Qual é o diagnóstico mais provável?",
+        "options": [
+          "Anemia por Deficiência de Ferro",
+          "Anemia por Deficiência de B12",
+          "Talassemia Minor",
+          "Anemia de Doença Crónica"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A combinação de anemia microcítica (VCM baixo) com reserva de ferro depletada (Ferritina baixa) é o padrão clássico da Anemia Ferropriva."
+      },
+      {
+        "text": "Paciente apresenta: Hb Baixa, VCM Alto (> 100 fL) e Reticulócitos Baixos. Qual é a suspeita diagnóstica?",
+        "options": [
+          "Anemia Hemolítica",
+          "Talassemia",
+          "Deficiência de B12 ou Folato",
+          "Anemia Ferropriva"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A anemia macrocítica (VCM alto) com reticulócitos baixos (medula não responde) sugere um defeito de maturação, causado pela deficiência de B12 ou Folato."
+      },
+      {
+        "text": "Num paciente na emergência com suspeita de Sepse (infeção grave), qual é o exame laboratorial mais crítico para avaliar hipóxia tecidual e risco de choque?",
+        "options": [
+          "Hemograma (Leucócitos)",
+          "PCR (Proteína C Reativa)",
+          "Lactato Sérico",
+          "Hemocultura"
+        ],
+        "correctAnswer": 2,
+        "explanation": "O Lactato é o produto do metabolismo anaeróbico. Níveis elevados (ex: > 4 mmol/L) indicam que os tecidos não estão a receber oxigénio (hipoperfusão/choque)."
+      },
+      {
+        "text": "No algoritmo de diagnóstico de Dengue, qual é o marcador de gravidade (risco de choque) mais importante no hemograma?",
+        "options": [
+          "Aumento do Hematócrito (Hemoconcentração)",
+          "Queda dos Leucócitos (Leucopenia)",
+          "Aumento dos Linfócitos (Linfocitose)",
+          "Queda da Hemoglobina"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A queda das plaquetas indica risco de sangramento, mas o AUMENTO do Hematócrito indica extravasamento de plasma, que é o mecanismo do choque na Dengue."
+      },
+      {
+        "text": "Paciente diabético apresenta HbA1c = 8,5% e uma relação Albumina/Creatinina na Urina de 150 mg/g. Qual é a interpretação?",
+        "options": [
+          "Diabetes bem controlada, sem complicações.",
+          "Diabetes descontrolada e com Microalbuminúria (Nefropatia Diabética inicial).",
+          "Cetoacidose Diabética.",
+          "Infeção Urinária."
+        ],
+        "correctAnswer": 1,
+        "explanation": "HbA1c > 7% indica mau controlo. A relação Albumina/Creatinina entre 30 e 300 mg/g é a definição de Microalbuminúria, o primeiro sinal de lesão renal."
+      },
+      {
+        "text": "Paciente com sangramento apresenta: Plaquetas Normais, TP Normal, TTPA Prolongado. O 'Teste da Mistura' (1:1 com plasma normal) corrigiu o TTPA. Qual a suspeita?",
+        "options": [
+          "Uso de Varfarina",
+          "Doença Hepática",
+          "Presença de um Inibidor (ex: Anticoagulante Lúpico)",
+          "Deficiência de Fator da Via Intrínseca (ex: Hemofilia A - Fator VIII)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "TTPA prolongado isolado aponta para a via intrínseca. Como o teste da mistura corrigiu, significa que era uma deficiência (o plasma normal forneceu o fator), como na Hemofilia."
+      },
+      {
+        "text": "Paciente com sangramento apresenta: Plaquetas Normais, TP Normal, TTPA Prolongado. O 'Teste da Mistura' NÃO corrigiu o TTPA. Qual a suspeita?",
+        "options": [
+          "Deficiência de Fator VIII (Hemofilia A)",
+          "Deficiência de Fator IX (Hemofilia B)",
+          "Presença de um Inibidor (ex: Anticoagulante Lúpico)",
+          "Uso de Varfarina"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Se a mistura com plasma normal não corrige o tempo, significa que algo no plasma do paciente (um inibidor) está a atacar os fatores normais. O Anticoagulante Lúpico é a causa mais comum."
+      },
+      {
+        "text": "Na estratificação de risco cardiovascular, qual é a meta de LDL-C (colesterol 'ruim') para um paciente de ALTO risco (ex: já teve infarto ou é diabético)?",
+        "options": [
+          "< 130 mg/dL",
+          "< 100 mg/dL",
+          "< 70 mg/dL (ou < 50 mg/dL, dependendo da diretriz)",
+          "< 200 mg/dL"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Para pacientes de alto risco (prevenção secundária), o controlo do LDL deve ser muito rigoroso, com metas abaixo de 70 mg/dL ou 50 mg/dL."
+      },
+      {
+        "text": "Paciente febril, suspeita de Dengue (5º dia), apresenta Plaquetas = 80.000/mm³ e Hematócrito subindo (aumento de 15% do basal). Qual a conduta?",
+        "options": [
+          "Alta para casa, hidratação oral.",
+          "Internamento para observação (Sinais de Alarme).",
+          "UTI imediata (Choque instalado).",
+          "Repetir hemograma em 7 dias."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Plaquetas < 100k e aumento do Hct (hemoconcentração) são Sinais de Alarme clássicos. O paciente está a extravasar plasma e precisa de internação para hidratação venosa e monitorização."
+      },
+      {
+        "text": "Qual exame é usado para diferenciar uma Anemia Microcítica Ferropriva (Ferritina baixa) de uma Talassemia Minor (Ferritina normal/alta)?",
+        "options": [
+          "Contagem de Plaquetas",
+          "Dosagem de Lactato",
+          "Eletroforese de Hemoglobina",
+          "Dosagem de AST (TGO)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Eletroforese de Hemoglobina mostrará um aumento da Hemoglobina A2 (Hb A2 > 3.5%), que é o marcador clássico da Talassemia Beta Minor."
+      }
+    ]
+  },
+  "modulo10": {
+    "title": "Módulo 10: Biossegurança",
+    "questions": [
+      {
+        "text": "De acordo com a NR-32 e a OMS, a maioria dos laboratórios clínicos de rotina (que manipulam sangue, urina) são classificados em qual Nível de Biossegurança (BSL)?",
+        "options": [
+          "BSL-1 (Risco Mínimo)",
+          "BSL-2 (Risco Moderado)",
+          "BSL-3 (Risco Elevado)",
+          "BSL-4 (Risco Altíssimo)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "BSL-2 é o padrão para agentes de Classe II (HIV, HBV, HCV, Dengue), que são os riscos moderados encontrados na rotina laboratorial."
+      },
+      {
+        "text": "Qual é a especificação correta do Jaleco, segundo a NR-32?",
+        "options": [
+          "Manga curta, aberto na frente, até a cintura.",
+          "Qualquer cor, desde que seja de algodão.",
+          "Manga comprida, fechado, comprimento até os joelhos.",
+          "Pode ser usado no refeitório, desde que esteja limpo."
+        ],
+        "correctAnswer": 2,
+        "explanation": "O jaleco é um EPI e deve oferecer proteção máxima: mangas compridas e comprimento até os joelhos para proteger contra respingos."
+      },
+      {
+        "text": "Qual é a técnica correta para REMOVER luvas contaminadas?",
+        "options": [
+          "Puxar as duas ao mesmo tempo pela ponta dos dedos.",
+          "Lavar as luvas com álcool 70% e depois removê-las.",
+          "Pinçar a parte externa da 1ª luva, virá-la do avesso, e usar os dedos limpos por dentro da 2ª luva para removê-la.",
+          "Usar os dentes para puxar a primeira luva."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A técnica correta evita que a mão limpa toque a parte externa contaminada da segunda luva, prevenindo a autoinoculação."
+      },
+      {
+        "text": "Resíduos perfurocortantes (agulhas, lâminas, vidros quebrados) devem ser descartados em qual tipo de recipiente?",
+        "options": [
+          "Saco Branco Leitoso (Infectante)",
+          "Saco Amarelo (Químico)",
+          "Saco Preto (Comum)",
+          "Caixa Rígida Amarela (Descarpack)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "O recipiente Descarpack (Classe E) é rígido (à prova de perfuração) e deve ser usado para todos os materiais que podem cortar ou perfurar."
+      },
+      {
+        "text": "Qual é o procedimento imediato correto após um acidente perfurocortante (picada de agulha) com sangue?",
+        "options": [
+          "Espremer o local para sair o sangue ('ordenhar') e depois colocar álcool.",
+          "Lavar abundantemente com água e sabão, sem espremer.",
+          "Ignorar, pois o risco de transmissão de HIV é baixo (0,3%).",
+          "Colocar Cloro (água sanitária) diretamente na ferida."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A primeira ação é lavar abundantemente com água e sabão. Não se deve espremer (aumenta a microcirculação) nem usar desinfetantes agressivos na pele."
+      },
+      {
+        "text": "A Quimioprofilaxia Pós-Exposição (PEP) para HIV deve ser iniciada, idealmente, em até:",
+        "options": [
+          "24 horas",
+          "72 horas (3 dias)",
+          "2 horas",
+          "7 dias"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A PEP para HIV é uma emergência. Deve ser iniciada o mais rápido possível, idealmente nas primeiras 2 horas, e no máximo em 72 horas (a eficácia cai drasticamente após isso)."
+      },
+      {
+        "text": "Qual vacina é OBRIGATÓRIA pela NR-32 para todos os profissionais de laboratório, com verificação de soroconversão (Anti-HBs > 10)?"
+        "options": [
+          "Gripe (Influenza)",
+          "Hepatite B (HBV)",
+          "Tuberculose (BCG)",
+          "Febre Amarela"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Devido ao alto risco de transmissão (30%) por acidente, a vacina contra Hepatite B e a comprovação da sua eficácia (soroconversão) são obrigatórias."
+      },
+      {
+        "text": "Para um derrame de grande volume de sangue ou material biológico no chão, qual é o desinfetante de eleição e o tempo de contacto?",
+        "options": [
+          "Álcool 70%, por 1 minuto.",
+          "Cloro 0.5% (Água Sanitária diluída), por 10 minutos.",
+          "Quaternário de Amónio, por 30 segundos.",
+          "Água e sabão apenas."
+        ],
+        "correctAnswer": 1,
+        "explanation": "O Cloro (Hipoclorito) é o desinfetante de eleição para matéria orgânica (sangue), pois é potente contra todos os agentes (incluindo vírus não-envelopados) e precisa de tempo de contacto (10 min)."
+      },
+      {
+        "text": "O recipiente de perfurocortantes (Descarpack) deve ser descartado quando atingir qual nível de capacidade?",
+        "options": [
+          "100% (totalmente cheio)",
+          "2/3 (ou a linha pontilhada indicada)",
+          "50% (metade)",
+          "Assim que a primeira agulha for colocada"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Nunca se deve encher o Descarpack até ao topo, pois aumenta o risco de acidente ao tentar forçar a entrada de mais material. O limite seguro é 2/3."
+      },
+      {
+        "text": "Placas de cultura de bactérias (Microbiologia) e tubos de sangue (Hematologia) devem ser descartados em qual classe de resíduo?",
+        "options": [
+          "Classe A (Branco - Infectante)",
+          "Classe B (Amarelo - Químico)",
+          "Classe D (Preto - Comum)",
+          "Classe E (Rígido - Perfurocortante)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Materiais com sangue, fluidos ou culturas de microrganismos são classificados como Risco Biológico (Infectante) Classe A."
+      }
+    ]
+  }
+}
