@@ -673,17 +673,41 @@ certModuleName.textContent = currentQuizData.title || "[Nome do Módulo]";
             });
             downloadPdfBtn.addEventListener('click', () => {
     const element = document.getElementById('certificate-to-print');
+    const originalStyle = {
+        margin: element.style.margin,
+        boxShadow: element.style.boxShadow,
+        maxWidth: element.style.maxWidth,
+        width: element.style.width
+    };
+    // --- AJUSTE TEMPORÁRIO PARA O PDF ---
+    // Remove margens e sombras para "colar" o conteúdo no topo e esquerda
+    element.style.margin = '0';
+    element.style.boxShadow = 'none'; 
+    element.style.maxWidth = '100%'; // Garante que usa toda a largura
+    element.style.width = '100%';
+
+    // Configurações do PDF
     const opt = {
-        margin:       5, // <-- MUDAR PARA 5 (dá mais espaço na folha)
+        margin:       5, // Margem pequena de 5mm no papel
         filename:     `Certificado_${currentUser.name}.pdf`,
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
+        html2canvas:  { 
+            scale: 2, 
+            scrollY: 0, // <--- O SEGREDO: Força o topo da página, ignorando a rolagem
+            useCORS: true 
+        },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
         pagebreak:    { mode: 'avoid-all' }
     };
 
-    // Gera o PDF
-    html2pdf().set(opt).from(element).save();
+    // Gera o PDF e depois restaura o estilo original da página
+    html2pdf().set(opt).from(element).save().then(() => {
+        // --- RESTAURA O ESTILO ORIGINAL ---
+        element.style.margin = originalStyle.margin;
+        element.style.boxShadow = originalStyle.boxShadow;
+        element.style.maxWidth = originalStyle.maxWidth;
+        element.style.width = originalStyle.width;
+    });
 });
 
             // Mostra a vista de "Cards do Quizz"
@@ -715,7 +739,7 @@ certModuleName.textContent = currentQuizData.title || "[Nome do Módulo]";
                     currentQuizData = allQuizData[moduleId]; // Armazena os dados do quizz (perguntas, título)
     
                     
-                    quizTitle.textContent = `Quizz: ${currentQuizData.title || currentQuiz.title}`;
+                    quizTitle.textContent = `Quizz: ${currentQuizData.title || "Título Indisponível"}`;
                     
                     showView('#quiz-active-view');
                     userInfoForm.style.display = 'block';
