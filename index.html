@@ -270,51 +270,56 @@
             margin-right: 10px;
         }
 
-        /* --- NOVOS ESTILOS: VISTA DO CERTIFICADO --- */
-        .certificate-container {
+        /* --- NOVOS ESTILOS: VISTA DO CERTIFICADO (COMPACTO) --- */
+.certificate-container {
     background-color: #ffffff;
     border: 10px solid #005a9c;
-    padding: 30px; /* Reduzido de 50px para 30px */
-    max-width: 1000px; /* Aumentado de 800px para usar mais a largura da folha */
-    margin: 20px auto;
+    padding: 20px; /* Reduzido para 20px */
+    max-width: 1100px; /* Mais largo para o texto ocupar menos linhas */
+    width: 90%; 
+    margin: 10px auto;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     border-radius: 8px;
 }
 .certificate-container h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Fonte ligeiramente menor */
     color: #005a9c;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 10px 0; /* Margem reduzida */
+    margin: 5px 0; /* Margem mínima */
 }
 .certificate-container p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #444;
-    margin: 5px 0; /* Margem reduzida */
+    margin: 2px 0; /* Margem mínima */
 }
 #cert-user-name {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #222;
-    margin: 10px 0; /* Reduzido de 20px */
-}
-#cert-score {
     font-size: 2rem;
     font-weight: 700;
+    color: #222;
+    margin: 5px 0; /* Muito reduzido */
+}
+#cert-module-name {
+    margin: 5px 0;
+    color: #333;
+}
+#cert-score {
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #218838;
-    margin: 10px 0; /* Reduzido de 20px */
+    margin: 5px 0;
 }
 .motivation-message {
     font-style: italic;
-    font-size: 1.2rem !important;
-    margin: 20px 0 !important; /* Reduzido de 30px */
+    font-size: 1.1rem !important;
+    margin: 15px 0 !important;
     color: #333 !important;
 }
 .signature {
-    margin-top: 30px !important; /* Reduzido de 40px */
+    margin-top: 20px !important;
     font-weight: 600;
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
 }
 
         /* --- ESTILOS DE CONTEÚDO (existentes) --- */
@@ -669,13 +674,13 @@ certModuleName.textContent = currentQuizData.title || "[Nome do Módulo]";
             downloadPdfBtn.addEventListener('click', () => {
     const element = document.getElementById('certificate-to-print');
     const opt = {
-        margin:       10,
-    filename:     `Certificado_${currentUser.name}.pdf`,
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 2 },
-    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
-    pagebreak:    { mode: 'avoid-all' } // Adicione esta linha
-};
+        margin:       5, // <-- MUDAR PARA 5 (dá mais espaço na folha)
+        filename:     `Certificado_${currentUser.name}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
+        pagebreak:    { mode: 'avoid-all' }
+    };
 
     // Gera o PDF
     html2pdf().set(opt).from(element).save();
