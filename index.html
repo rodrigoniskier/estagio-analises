@@ -272,48 +272,50 @@
 
         /* --- NOVOS ESTILOS: VISTA DO CERTIFICADO --- */
         .certificate-container {
-            background-color: #ffffff;
-            border: 10px solid #005a9c;
-            padding: 50px;
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            border-radius: 8px;
-        }
-        .certificate-container h2 {
-            font-size: 1.8rem;
-            color: #005a9c;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .certificate-container p {
-            font-size: 1.1rem;
-            color: #444;
-        }
-        #cert-user-name {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #222;
-            margin: 20px 0;
-        }
-        #cert-score {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #218838; /* Verde */
-            margin: 20px 0;
-        }
-        .motivation-message {
-            font-style: italic;
-            font-size: 1.2rem !important;
-            margin: 30px 0 !important;
-            color: #333 !important;
-        }
-        .signature {
-            margin-top: 40px !important;
-            font-weight: 600;
-            font-size: 1.1rem !important;
-        }
+    background-color: #ffffff;
+    border: 10px solid #005a9c;
+    padding: 30px; /* Reduzido de 50px para 30px */
+    max-width: 1000px; /* Aumentado de 800px para usar mais a largura da folha */
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+.certificate-container h2 {
+    font-size: 1.8rem;
+    color: #005a9c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 10px 0; /* Margem reduzida */
+}
+.certificate-container p {
+    font-size: 1.1rem;
+    color: #444;
+    margin: 5px 0; /* Margem reduzida */
+}
+#cert-user-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin: 10px 0; /* Reduzido de 20px */
+}
+#cert-score {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #218838;
+    margin: 10px 0; /* Reduzido de 20px */
+}
+.motivation-message {
+    font-style: italic;
+    font-size: 1.2rem !important;
+    margin: 20px 0 !important; /* Reduzido de 30px */
+    color: #333 !important;
+}
+.signature {
+    margin-top: 30px !important; /* Reduzido de 40px */
+    font-weight: 600;
+    font-size: 1.1rem !important;
+}
 
         /* --- ESTILOS DE CONTEÚDO (existentes) --- */
         .highlight-box { background-color: #fff9e6; border-left: 5px solid #ffc107; padding: 15px 20px; margin: 20px 0; border-radius: 0 5px 5px 0; }
@@ -668,11 +670,12 @@ certModuleName.textContent = currentQuizData.title || "[Nome do Módulo]";
     const element = document.getElementById('certificate-to-print');
     const opt = {
         margin:       10,
-        filename:     `Certificado_${currentUser.name}.pdf`,
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
-    };
+    filename:     `Certificado_${currentUser.name}.pdf`,
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' },
+    pagebreak:    { mode: 'avoid-all' } // Adicione esta linha
+};
 
     // Gera o PDF
     html2pdf().set(opt).from(element).save();
