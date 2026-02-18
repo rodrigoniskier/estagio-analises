@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Estágio - Análises Clínicas</title>
@@ -429,7 +430,7 @@
             </div>
 
             <div id="certificate-view" style="display: none;">
-                <div class="certificate-container">
+                <div class="certificate-container" id="certificate-to-print"> <h2>CERTIFICADO DE CONCLUSÃO</h2>
                     <h2>CERTIFICADO DE CONCLUSÃO</h2>
                     <p>Certificamos que</p>
                     <h1 id="cert-user-name">[Nome do Aluno]</h1>
@@ -441,6 +442,7 @@
                     <p class="signature">Prof. Rodrigo Niskier</p>
                 </div>
                 <button class="quiz-btn" id="back-to-quiz-list-from-cert" style="margin-top: 20px;">Voltar aos Módulos</button>
+                <button class="quiz-btn" id="download-pdf-btn" style="margin-top: 20px; background-color: #218838;">Salvar em PDF</button>
             </div>
             
         </main>
@@ -458,6 +460,7 @@
             const quizActiveView = document.getElementById('quiz-active-view');
             const certificateView = document.getElementById('certificate-view');
             const allViews = [welcomeView, moduleContentView, quizCardView, quizActiveView, certificateView];
+            const downloadPdfBtn = document.getElementById('download-pdf-btn');
 
             // Triggers (Links e Botões)
             const allSidebarLinks = document.querySelectorAll('.sidebar-link');
@@ -661,6 +664,19 @@ certModuleName.textContent = currentQuizData.title || "[Nome do Módulo]";
                     loadModuleContent(jsonFile, moduleTitle, link);
                 });
             });
+            downloadPdfBtn.addEventListener('click', () => {
+    const element = document.getElementById('certificate-to-print');
+    const opt = {
+        margin:       10,
+        filename:     `Certificado_${currentUser.name}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+
+    // Gera o PDF
+    html2pdf().set(opt).from(element).save();
+});
 
             // Mostra a vista de "Cards do Quizz"
             showQuizCardsLink.addEventListener('click', (event) => {
